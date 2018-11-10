@@ -1,0 +1,48 @@
+.wrapper {
+  max-width: 80%;
+  border: 1px solid black;
+  margin: 0 auto;
+  min-height: 500px;
+}
+.top-category-list {
+  display: flex;
+  justify-content: space-around;
+}
+.top-category-list > li {
+  border: 1px solid black;
+  padding: 5px;
+}
+.card {
+  padding: 15px;
+}
+.card-list_item {
+  position: relative;
+  flex-basis: 20%;
+  height: 300px;
+  border: 1px solid black;
+  margin-bottom: 35px;
+}
+.card-list_item img {
+  left: 0;
+  width: 100%;
+  position: absolute;
+
+  height: 100%;
+}
+.card-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.actor-list {
+  width: 40%;
+}
+.movie-images-list {
+  display: flex;
+  width: 40%;
+}
+
+#genres {
+  position: absolute;
+  left: 0;
+}

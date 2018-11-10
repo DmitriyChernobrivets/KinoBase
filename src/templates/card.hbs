@@ -1,0 +1,29 @@
+<div class="card">
+    <h2 class="title">{{title}}</h2>
+    <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="">
+    <p class="countries">
+        {{#each production_countries}}
+        <span>{{name}}</span>
+        {{/each}}
+    </p>
+    <p class="budget">{{budget}}$</p>
+    <p class="slogan">{{tagline}}</p>
+    <p class="release-data">{{release_date}}</p>
+    <p class="revenue">{{revenue}}</p>
+    <p class="imdb">{{vote_average}}</p>
+    <p class="runtime">{{runtime}}</p>
+    <ul class="genres-list">
+        {{#each genres}}
+        <li class="genres-list"><a href="#">{{name}}</a></li>
+        {{/each}}
+    </ul>
+    <div class="trailer-frame">
+
+    </div>
+    <div class="slider-container">
+        <ul class="actor-list">
+        </ul>
+        <ul class="movie-images-list">
+        </ul>
+    </div>
+</div>

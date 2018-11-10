@@ -1,0 +1,8 @@
+<ul class="card-list">
+    {{#each this}}
+    <li class="card-list_item" data-id={{id}}>
+        <a href="#">{{id}}</a>
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="img">
+    </li>
+    {{/each}}
+</ul>
