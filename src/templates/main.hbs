@@ -1,11 +1,37 @@
-<main class="main wrapper">
-    <ul class="top-category-list">
-        <li class="js-btn-latest"><a href="#">latest</a></li>
-        <li class="js-btn-movies"><a href="#">upComing</a></li>
-        <li class="js-btn-series"><a href="#">series</a></li>
-        <li class="js-btn-toprated"><a href="#">top rated</a></li>
+<div class="top-nav-menu">
+    <ul class="top-nav-menu_list">
+        <li><a href="#" class="top-menu-link js-top-films-btn">Films</a></li>
+        <li><a href="#" class="top-menu-link js-top-serias-btn">Serials</a></li>
+        <li><a href="#" class="top-menu-link">Favorites</a></li>
     </ul>
-    <select name="genres" id="genres">
+</div>
+<main class="main wrapper">
+
+    <div class="menu-overlay"></div>
+    <div class="aside-menu ">
+
+        <div class="aside-logo"></div>
+        <div class="films">
+            <h2 class="films-head">Films</h2>
+            <ul class="films-category-list">
+                <li class="js-btn-latest"><a href="#" class="films-query-name" data-query="now_playing">latest</a></li>
+                <li class="js-btn-movies"><a href="#" class="films-query-name" data-query="upcoming">upComing</a></li>
+
+                <li class="js-btn-toprated"><a href="#" class="films-query-name" data-query="top_rated">top rated</a></li>
+            </ul>
+        </div>
+        <button class="menu-close js-menu-close">Close</button>
+    </div>
+    {{!-- <div class="list serias">
+        serias
+        <ul class="top-category-list">
+            <li class="js-btn-latest"><a href="#">latest</a></li>
+            <li class="js-btn-movies"><a href="#">upComing</a></li>
+
+            <li class="js-btn-toprated"><a href="#">top rated</a></li>
+        </ul>
+    </div> --}}
+    {{!-- <select name="genres" id="genres">
         <option value="">--genres--</option>
         <option value="28">Action</option>
         <option value="12">Adventure</option>
@@ -13,7 +39,7 @@
         <option value="35">Comedy</option>
         <option value="80">Crime</option>
         <option value="99">Documentary</option>
-    </select>
+    </select> --}}
     <div class="container"></div>
 
 

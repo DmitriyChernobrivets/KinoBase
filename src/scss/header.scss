@@ -1,4 +1,48 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  height: 65px;
+  width: 100%;
+  background-color: #77c1bb;
+}
+.humburger-menu-btn {
+  position: absolute;
+  left: 150px;
+  top: 22px;
+  i {
+    font-size: 25px;
+  }
+}
+.logo {
+  i {
+    font-size: 32px;
+    margin-right: 10px;
+  }
+  .logo-link {
+    font-size: 22px;
+  }
+}
+
+.search {
+  background-color: transparent;
+  padding: 12px 7px 5px 37px;
+  border-bottom: 2px solid #5b7f88;
+  height: 20px;
+  font-size: 16px;
+}
+.search-btn {
+  position: absolute;
+  left: 0;
+  top: 20%;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: none;
+  i {
+    font-size: 16px;
+  }
+}
+.search-container {
+  position: relative;
 }

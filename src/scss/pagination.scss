@@ -1,0 +1,54 @@
+$border-color: #3d315b;
+$background-color: #266dd3;
+$list-background-color: #444b6e;
+$active-list-background-color: #9ab87a;
+$border-radius: 5px;
+
+a:hover {
+  cursor: pointer;
+}
+#pagination {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {
+      color: #fff;
+      display: flex;
+      a {
+        background-color: #444b6e;
+        padding: 5px 10px;
+        border: 2px solid $border-color;
+        border-right: 0;
+        font-family: "Poppins";
+      }
+    }
+    // li.previous,
+    // li.next {
+    //   animation: fadein .5s;
+    // }
+    li.active a {
+      background-color: $active-list-background-color;
+    }
+    li:first-child a {
+      border-radius: $border-radius 0 0 $border-radius;
+    }
+    li:last-child a {
+      border-radius: 0 $border-radius $border-radius 0;
+      border-right: 2px solid $border-color;
+    }
+  }
+}
+
+// When I feel motivated to get this working
+// @keyframes fadein {
+//   from {opacity: 0;}
+//   to {opacity: 1;}
+// }

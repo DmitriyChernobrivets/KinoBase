@@ -1,0 +1,42 @@
+.card-list.title {
+  font-size: 16px;
+  z-index: 2;
+}
+.card-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &_item {
+    position: relative;
+    -webkit-box-shadow: -2px 1px 26px -1px rgba(138, 123, 138, 1);
+    -moz-box-shadow: -2px 1px 26px -1px rgba(138, 123, 138, 1);
+    box-shadow: -2px 1px 26px -1px rgba(138, 123, 138, 1);
+    flex-basis: 24%;
+    height: 500px;
+    border-radius: 10px;
+    transition: 0.2s linear;
+    margin-bottom: 35px;
+    cursor: pointer;
+    &:hover {
+      transform: translate(0, -10px);
+      transition: 0.2s linear;
+    }
+    & img {
+      left: 0;
+      width: 100%;
+      position: absolute;
+      border-radius: 10px;
+      height: 100%;
+    }
+  }
+
+  &_text-content {
+    position: absolute;
+    z-index: 100;
+    padding: 5px;
+    & > * {
+      font-size: 16px;
+      color: aliceblue;
+    }
+  }
+}

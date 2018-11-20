@@ -1,0 +1,63 @@
+.aside-menu {
+  .aside-logo {
+    height: 140px;
+    border: 1px solid red;
+  }
+  transition: 0.2s linear;
+  position: fixed;
+  border: 1px solid black;
+  height: 100%;
+  width: 0;
+  overflow: hidden;
+  z-index: 100;
+  background-color: yellow;
+  left: 0;
+  top: 0;
+
+  .films {
+    width: 140px;
+    margin: 0 auto;
+    padding-top: 30px;
+    &-head {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #6b6377;
+    }
+    .films-category-list {
+      width: 100px;
+      margin-left: 30px;
+      & > li {
+        padding: 5px;
+        & > a {
+          font-size: 18px;
+          color: #6b6377;
+        }
+      }
+    }
+  }
+}
+.menu-overlay {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 100%;
+  z-index: 99;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(153, 153, 153, 0.4) 0%,
+    rgba(148, 148, 148, 0.4) 47%,
+    rgba(143, 143, 143, 0.4) 100%
+  );
+}
+.menu-open {
+  width: 250px;
+  transition: 0.2s linear;
+}
+.overlay-open {
+  display: block;
+}
+.top-nav-open {
+  background-color: red;
+}

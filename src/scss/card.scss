@@ -1,0 +1,60 @@
+.card {
+  padding: 15px;
+}
+.card-content-wr {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  .img-container {
+    height: 600px;
+    width: 400px;
+    & > img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+.card-content {
+  width: 47%;
+  .title {
+    margin-bottom: 15px;
+  }
+  & ul li {
+    display: flex;
+    & p {
+      font-size: 18px;
+      padding: 5px 15px;
+    }
+    &:nth-child(2n + 1) {
+      background-color: #addad6;
+    }
+  }
+}
+// .about-title {
+//   width: 200px;
+// }
+// .actor-list {
+//   width: 40%;
+// }
+// .movie-images-list {
+//   display: flex;
+//   width: 40%;
+// }
+
+#genres {
+  position: absolute;
+  left: 0;
+}
+.list {
+  position: relative;
+  right: 100px;
+}
+.trailer-frame {
+  text-align: center;
+  margin-bottom: 55px;
+  .trailer-head {
+    text-align: left;
+    padding: 5px 0 5px 40px;
+    margin-bottom: 20px;
+  }
+}

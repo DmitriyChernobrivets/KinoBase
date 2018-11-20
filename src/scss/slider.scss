@@ -1,12 +1,12 @@
 .slider {
-  width: 300px;
+  width: 900px;
   position: relative;
 }
 
 .frame {
   font-size: 0;
   line-height: 0;
-  width: 300px;
+  width: 900px;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -14,13 +14,21 @@
 .slides {
   display: inline-block;
 
-  height: 100px;
+  height: 200px;
 }
 
 .slider-item {
   display: inline-block;
+  width: 170px;
+  margin-right: 15px;
+  & p {
+    font-size: 14px;
+    z-index: 19;
+  }
 }
-
+.slider-head {
+  margin-bottom: 25px;
+}
 .prev,
 .next {
   position: absolute;
@@ -45,18 +53,37 @@
   width: 25px;
 }
 .js_slide {
-  height: 100px;
-  width: 100px;
+  height: 100%;
 }
 
 .slider-item img {
-  width: 100%;
-  height: 100%;
+  width: 170px;
+  height: 200px;
+  margin-right: 15px;
 }
 .slider-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.actor-list {
+  text-align: center;
+  margin-bottom: 50px;
+  & .slider-item img {
+    margin-bottom: 15px;
+  }
+  & .slides {
+    height: 230px;
+  }
+  & p {
+  }
 }
 .slider-container ul {
-  width: 300px;
+  width: 900px;
+}
+.movie-images-list .frame {
+  width: 540px;
+}
+.movie-images-list .slider {
+  width: 540px;
 }

@@ -1,16 +1,15 @@
 import axios from "axios";
-export default class Model {
+export class Model {
   constructor() {
     this.API_KEY = "fee40cf045e7a2ddd3eb575c5bb1c4eb";
     this.url = "https://api.themoviedb.org/3/";
   }
-  async latestPromise() {
+  async latestPromise(query = "now_playing") {
     return await axios.get(
-      `${this.url}movie/now_playing?api_key=${
-        this.API_KEY
-      }&language=en-US&page=1`
+      `${this.url}movie/${query}?api_key=${this.API_KEY}&language=en-US&page=1`
     );
   }
+
   async topRatedPromise() {
     return await axios.get(
       `${this.url}movie/top_rated?api_key=${this.API_KEY}&language=en-US&page=1`
@@ -21,11 +20,6 @@ export default class Model {
       `${this.url}movie/upcoming?api_key=${this.API_KEY}&language=en-US&page=1`
     );
   }
-  // async serialsPromise() {
-  //   return await axios.get(
-  //     `${this.url}tv/popular?api_key=${this.API_KEY}&language=en-US&page=1`
-  //   );
-  // }
 
   async cardPromise(id) {
     const trailer = await axios.get(
@@ -50,3 +44,5 @@ export default class Model {
     );
   }
 }
+
+export const model = new Model();
