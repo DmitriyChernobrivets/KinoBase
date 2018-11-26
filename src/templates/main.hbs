@@ -1,8 +1,8 @@
 <div class="top-nav-menu">
     <ul class="top-nav-menu_list">
-        <li><a href="#" class="top-menu-link js-top-films-btn">Films</a></li>
-        <li><a href="#" class="top-menu-link js-top-serias-btn">Serials</a></li>
-        <li><a href="#" class="top-menu-link">Favorites</a></li>
+        <li><a href="#" class="top-menu-link js-top-films-btn top-nav-open film" data-query="now_playing">Фильмы</a></li>
+        <li><a href="#" class="top-menu-link js-top-serias-btn TV" data-query="on_the_air">Сериалы</a></li>
+        <li><a href="#" class="top-menu-link js-favorites-list">Избранное</a></li>
     </ul>
 </div>
 <main class="main wrapper">
@@ -14,10 +14,18 @@
         <div class="films">
             <h2 class="films-head">Films</h2>
             <ul class="films-category-list">
-                <li class="js-btn-latest"><a href="#" class="films-query-name" data-query="now_playing">latest</a></li>
-                <li class="js-btn-movies"><a href="#" class="films-query-name" data-query="upcoming">upComing</a></li>
+                <li class="js-btn-latest"><a href="#" class="films-query-name film" data-query="now_playing">latest</a></li>
+                <li class="js-btn-movies"><a href="#" class="films-query-name film" data-query="upcoming">upComing</a></li>
 
-                <li class="js-btn-toprated"><a href="#" class="films-query-name" data-query="top_rated">top rated</a></li>
+                <li class="js-btn-toprated"><a href="#" class="films-query-name film" data-query="top_rated">top
+                        rated</a></li>
+            </ul>
+            <h2 class="films-head">TV Serials</h2>
+            <ul class="films-category-list">
+                <li class="js-btn-latest"><a href="#" class="TV-query-name TV" data-query="popular">popular</a></li>
+                <li class="js-btn-movies"><a href="#" class="TV-query-name TV" data-query="top_rated">top_rated</a></li>
+
+                <li class="js-btn-toprated"><a href="#" class="TV-query-name TV" data-query="airing_today">airing_today</a></li>
             </ul>
         </div>
         <button class="menu-close js-menu-close">Close</button>

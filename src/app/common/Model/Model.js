@@ -1,48 +1,36 @@
-import axios from "axios";
-export class Model {
+import { Promises } from "../../mvc/Promises";
+export class Model extends Promises {
   constructor() {
-    this.API_KEY = "fee40cf045e7a2ddd3eb575c5bb1c4eb";
-    this.url = "https://api.themoviedb.org/3/";
-  }
-  async latestPromise(query = "now_playing") {
-    return await axios.get(
-      `${this.url}movie/${query}?api_key=${this.API_KEY}&language=en-US&page=1`
-    );
+    super();
+    this.tempArray = null;
+    this.localStorageKeys = Object.keys(localStorage);
+    this.favArr = [];
   }
 
-  async topRatedPromise() {
-    return await axios.get(
-      `${this.url}movie/top_rated?api_key=${this.API_KEY}&language=en-US&page=1`
-    );
-  }
-  async upComingPromise() {
-    return await axios.get(
-      `${this.url}movie/upcoming?api_key=${this.API_KEY}&language=en-US&page=1`
-    );
-  }
+  getLocalItems() {
+    const item = JSON.parse(localStorage.getItem("item"));
 
-  async cardPromise(id) {
-    const trailer = await axios.get(
-      `${this.url}movie/${id}/videos?api_key=${this.API_KEY}&language=en-US`
-    );
-    const moviesById = await axios.get(
-      `${this.url}movie/${id}?api_key=${this.API_KEY}&language=en-US`
-    );
-    const actors = await axios.get(
-      `${this.url}movie/${id}/credits?api_key=${this.API_KEY}`
-    );
-    const movieImages = await axios.get(
-      `${this.url}movie/${id}/images?api_key=${this.API_KEY}`
-    );
-    return [trailer, moviesById, actors, movieImages];
+    return item;
   }
-  async genres(genre_id) {
-    return await axios.get(
-      `${this.url}discover/movie?api_key=${
-        this.API_KEY
-      }&language=en-US&include_adult=false&include_video=false&page=1&with_genres=${genre_id}`
-    );
+  getFilmsObjById(id) {
+    return this.tempArray.find(el => el.id === +id);
   }
+  toogleObjInStorage(obj) {
+    this.favArr.includes(obj)
+      ? (this.favArr = this.favArr.filter(el => el.id !== obj.id))
+      : this.favArr.push(obj);
+
+    return this.favArr;
+  }
+  createLocalStorageFav(id) {
+    const obj = this.getFilmsObjById(id);
+    this.toogleObjInStorage(obj);
+    localStorage.setItem("item", JSON.stringify(this.favArr));
+  }
+  // removeLocalFav(id) {
+  //   localStorage.removeItem(id);
+  // }
+  // updateLocal() {
+  //   return (this.localStorageKeys = [...Object.keys(localStorage)]);
+  // }
 }
-
-export const model = new Model();

@@ -1,0 +1,19 @@
+<ul class="fav-list">
+
+    {{#each this}}
+    <li class="fav-item" data-id={{id}}>
+        <button class="fav-close js-close-btn">Close</button>
+        {{#if title}}
+        <h2 class="title">{{title}}</h2>
+        {{else}}
+        <h2 class="title">{{name}}</h2>
+        {{/if}}
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" class="card-img" alt="img">
+
+    </li>
+
+    {{/each}}
+
+    {{!-- <li class="not-founded">not-founded</li> --}}
+
+</ul>

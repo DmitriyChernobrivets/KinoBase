@@ -1,9 +1,12 @@
 <ul class="card-list">
     {{#each this}}
     <li class="card-list_item" data-id={{id}}>
+        <svg class="card-svg js-svg" height="35" width="35">
+            <use class="js-svg" href="images/star.svg#Capa_1"></use>
+        </svg>
 
-
-        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="img">
+        <div class="card-list_vote">{{vote_average}}</div>
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" class="card-img" alt="img">
 
     </li>
     {{/each}}

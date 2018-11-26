@@ -1,15 +1,30 @@
-<div class="slider js_slider">
+<div class="slider-slick">
+    {{#each backdrops}}
+    <div>
+        <img src="https://image.tmdb.org/t/p/w500{{file_path}}" alt="actors">
+
+    </div>
+    {{/each}}
+
+</div>
+
+{{!-- <div class="slider js_slider">
     <div class="frame js_frame">
         <ul class="slides js_slides">
-            {{#each backdrops}}
+
+
             {{#if file_path}}
             <li class="slider-item js_slide">
-
                 <img src="https://image.tmdb.org/t/p/w500{{file_path}}" alt="actors">
-
             </li>
+            {{else }}
+            <img src="https://seattletarp.com/wp-content/uploads/2016/07/imageComingSoon.jpg" width="600" height="300"
+                alt="actors">
             {{/if}}
-            {{/each}}
+
+
+
+
         </ul>
     </div>
     <span class="js_prev prev">
@@ -26,4 +41,4 @@
             </g>
         </svg>
     </span>
-</div>
+</div> --}}

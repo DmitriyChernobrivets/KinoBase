@@ -9,12 +9,13 @@
   width: 900px;
   overflow: hidden;
   white-space: nowrap;
+  height: 290px;
 }
 
 .slides {
   display: inline-block;
 
-  height: 200px;
+  height: 210px;
 }
 
 .slider-item {
@@ -58,7 +59,7 @@
 
 .slider-item img {
   width: 170px;
-  height: 200px;
+
   margin-right: 15px;
 }
 .slider-container {
@@ -73,9 +74,7 @@
     margin-bottom: 15px;
   }
   & .slides {
-    height: 230px;
-  }
-  & p {
+    height: 240px;
   }
 }
 .slider-container ul {
@@ -87,3 +86,10 @@
 .movie-images-list .slider {
   width: 540px;
 }
+.slider-slick {
+  position: relative;
+  width: 500px;
+}
+// .slider-slick div {
+//   position: absolute;
+// }

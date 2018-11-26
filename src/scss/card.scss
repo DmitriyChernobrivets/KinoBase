@@ -2,8 +2,14 @@
   padding: 15px;
 }
 .card-content-wr {
+  .content-list {
+    margin-bottom: 20px;
+  }
+  .head-reveiw {
+    margin-bottom: 15px;
+  }
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 25px;
   .img-container {
     height: 600px;
@@ -15,31 +21,46 @@
   }
 }
 .card-content {
-  width: 47%;
+  width: 60%;
   .title {
     margin-bottom: 15px;
   }
-  & ul li {
+  & .about-title {
+    padding-left: 5px;
+  }
+  & .genres-list {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: center;
+    // justify-content: space-between;
+    & li {
+      padding: 5px;
+      margin-right: 5px;
+    }
+  }
+  & > .content-list .content-items {
     display: flex;
+    justify-content: space-between;
+    & .discription {
+      flex-basis: 65%;
+      display: flex;
+      & li {
+        padding: 5px 5px 5px 0;
+        margin-right: 5px;
+      }
+    }
     & p {
       font-size: 18px;
-      padding: 5px 15px;
+      padding: 5px;
     }
     &:nth-child(2n + 1) {
       background-color: #addad6;
     }
   }
 }
-// .about-title {
-//   width: 200px;
-// }
-// .actor-list {
-//   width: 40%;
-// }
-// .movie-images-list {
-//   display: flex;
-//   width: 40%;
-// }
 
 #genres {
   position: absolute;

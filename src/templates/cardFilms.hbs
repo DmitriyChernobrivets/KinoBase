@@ -1,0 +1,113 @@
+<div class="card">
+    <div class="card-content-wr">
+        <div class="img-container">
+            <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="">
+        </div>
+        <div class="card-content">
+            {{#if title}}
+            <h2 class="title">{{title}}</h2>
+            {{else}}
+            <h2 class="title">{{name}}</h2>
+            {{/if}}
+            <ul class="content-list">
+                <li class="content-items">
+                    <p class="about-title">Страна:</p>
+
+                    <ul class="discription">
+                        {{#if production_countries}}
+                        {{#each production_countries}}
+                        <li>{{name}}</li>
+                        {{/each}}
+                        {{else}}
+                        {{#each origin_country}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                        {{/if}}
+                    </ul>
+
+                </li>
+                <li class="content-items">
+                    {{#if tagline}}
+                    <p class="about-title">Подзаголовок:</p>
+                    <p class="discription">{{tagline}}</p>
+                    {{else}}
+                    <p class="about-title">Кол-во сезонов:</p>
+                    <p class="discription">{{number_of_seasons}} сезонов.</p>
+                    {{/if}}
+                </li>
+                <li class="content-items">
+                    {{#if budget}}
+                    <p class="about-title">Бюджет:</p>
+                    <p class="discription">{{budget}}$</p>
+                    {{else }}
+                    <p class="about-title">Компании:</p>
+                    <ul class="discription">
+                        {{#each production_companies}}
+                        <li class="">{{name}}</li>
+                        {{/each}}
+                    </ul>
+
+                    {{/if}}
+                </li>
+                <li class="content-items">
+                    {{#if created_by}}
+                    <p class="about-title">Продюсер(ы):</p>
+                    <ul class="discription">
+                        {{#each created_by}}
+                        <li>{{name}}</li>
+                        {{/each}}
+                    </ul>
+                    {{else }}
+                    <p class="about-title">Кассовые сборы:</p>
+                    <p class="discription">{{revenue}}</p>
+                    {{/if}}
+
+                </li>
+                <li class="content-items">
+                    <p class="about-title">Жанры:</p>
+                    <ul class="genres-list discription">
+                        {{#each genres}}
+                        <li class=""><a href="#">{{name}}</a></li>
+                        {{/each}}
+                    </ul>
+                </li>
+                <li class="content-items">
+                    {{#if runtime}}
+                    <p class="about-title">Продол-ность:</p>
+                    <p class="discription">{{runtime}} мин.</p>
+                    {{else}}
+                    <p class="about-title">Продол-ность серии:</p>
+                    <p class="discription">{{episode_run_time}} мин.</p>
+                    {{/if}}
+                </li>
+                <li class="content-items">
+                    {{#if release_date}}
+                    <p class="about-title">Дата выхода:</p>
+                    <p class="discription">{{release_date}}</p>
+                    {{else }}
+                    <p class="about-title">Дата выхода:</p>
+                    <p class="discription">{{last_air_date}}</p>
+                    {{/if}}
+                </li>
+            </ul>
+            <h2 class="head-reveiw">Про фильмы:</h2>
+            <p>{{overview}}</p>
+        </div>
+    </div>
+    <div class="trailer-frame">
+
+    </div>
+
+    <div class="slider-container">
+        <div class="actors">
+            <h2 class="slider-head">Актеры</h2>
+            <div class="actor-list">
+            </div>
+        </div>
+        <div class="films-frames">
+            <h2 class="slider-head">Кадры из фильма</h2>
+            <div class="movie-images-list">
+            </div>
+        </div>
+    </div>
+</div>
