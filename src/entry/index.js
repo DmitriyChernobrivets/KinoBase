@@ -1,5 +1,6 @@
 import "../scss/styles.scss";
 import img from "../images/star.svg";
+
 import bodyTemplate from "../templates/body.hbs";
 import cardListTemplate from "../templates/cardList.hbs";
 import cardFilms from "../templates/cardFilms.hbs";

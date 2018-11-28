@@ -1,20 +1,15 @@
 .wrapper {
-  width: 1100px;
+  width: 1200px;
 
   margin: 0 auto;
-  min-height: 500px;
+  min-height: 800px;
 }
+.main {
+  // background-image: ;
 
-.top-nav-menu_list {
-  display: flex;
-  justify-content: center;
-
-  box-shadow: -6px 20px 25px -13px rgba(8, 8, 8, 1);
-  margin-bottom: 25px;
-  & > li {
-    padding: 15px;
-    & > a {
-      font-size: 18px;
-    }
-  }
+  padding-top: 25px;
+}
+.container {
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
 }

@@ -1,4 +1,28 @@
-.foo-list {
-  display: flex;
-  justify-content: center;
+.footer {
+  height: 80px;
+  background-color: #77c1bb;
+  padding: 15px 0;
+  .socials {
+    margin-bottom: 10px;
+  }
+  .foo-list {
+    display: flex;
+    justify-content: center;
+    .socials-item {
+      margin-left: 20px;
+    }
+    & li {
+      margin-right: 15px;
+      & a {
+        font-size: 16px;
+        color: #6b6377;
+        & i {
+          font-size: 30px;
+          &:hover {
+            color: #1565c0;
+          }
+        }
+      }
+    }
+  }
 }

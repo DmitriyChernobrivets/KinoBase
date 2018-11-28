@@ -12,14 +12,20 @@ export class CardView extends View {
     this.container = document.querySelector(".container");
     this.container.addEventListener("click", this.cardClickEvent.bind(this));
     this.filmsBtn = document.querySelector(".js-top-films-btn");
-    // console.log(this.container);
   }
   cardClickEvent({ target }) {
-    if (!target.classList.contains("card-img")) return;
-    if (this.filmsBtn.classList.contains("top-nav-open")) {
-      this.emite("cardEnterFilms", target.parentElement.dataset.id);
+    if (
+      !target.classList.contains("card-list_overlay") &&
+      !target.classList.contains("js-card-click")
+    )
+      return;
+    if (
+      this.filmsBtn.classList.contains("top-nav-open") ||
+      target.closest("li").dataset.category === "film"
+    ) {
+      this.emite("cardEnterFilms", target.closest("li").dataset.id);
     } else {
-      this.emite("cardEnterTV", target.parentElement.dataset.id);
+      this.emite("cardEnterTV", target.closest("li").dataset.id);
     }
   }
   trailerFrameDraw(obj) {

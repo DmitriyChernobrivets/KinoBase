@@ -1,54 +1,57 @@
 <div class="top-nav-menu">
     <ul class="top-nav-menu_list">
-        <li><a href="#" class="top-menu-link js-top-films-btn top-nav-open film" data-query="now_playing">Фильмы</a></li>
-        <li><a href="#" class="top-menu-link js-top-serias-btn TV" data-query="on_the_air">Сериалы</a></li>
-        <li><a href="#" class="top-menu-link js-favorites-list">Избранное</a></li>
+        <li><a href="#" class="top-menu-link js-top-films-btn top-nav-open film" data-category="film" data-query="now_playing">Фильмы</a></li>
+        <li><a href="#" class="top-menu-link js-top-serias-btn TV" data-category="TV" data-query="on_the_air">Сериалы</a></li>
+        <li><a href="#" class="top-menu-link js-favorites-list favorites">Избранное</a></li>
     </ul>
 </div>
-<main class="main wrapper">
+<main class="main">
+    <div class="wrapper">
+        <div class="menu-overlay">
 
-    <div class="menu-overlay"></div>
-    <div class="aside-menu ">
-
-        <div class="aside-logo"></div>
-        <div class="films">
-            <h2 class="films-head">Films</h2>
-            <ul class="films-category-list">
-                <li class="js-btn-latest"><a href="#" class="films-query-name film" data-query="now_playing">latest</a></li>
-                <li class="js-btn-movies"><a href="#" class="films-query-name film" data-query="upcoming">upComing</a></li>
-
-                <li class="js-btn-toprated"><a href="#" class="films-query-name film" data-query="top_rated">top
-                        rated</a></li>
-            </ul>
-            <h2 class="films-head">TV Serials</h2>
-            <ul class="films-category-list">
-                <li class="js-btn-latest"><a href="#" class="TV-query-name TV" data-query="popular">popular</a></li>
-                <li class="js-btn-movies"><a href="#" class="TV-query-name TV" data-query="top_rated">top_rated</a></li>
-
-                <li class="js-btn-toprated"><a href="#" class="TV-query-name TV" data-query="airing_today">airing_today</a></li>
-            </ul>
         </div>
-        <button class="menu-close js-menu-close">Close</button>
+        <div class="aside-menu ">
+
+            <div class="aside-logo">
+
+            </div>
+            <div class="films">
+                <i class="fas fa-times menu-close js-menu-close"></i>
+                <h2 class="films-head"><i class="fas fa-film"></i>Фильмы</h2>
+                <ul class="films-category-list js-nav-list">
+                    <li class="js-btn-latest"><a href="#" class="films-query-name film" data-query="now_playing">Сейчас
+                            в
+                            кино</a></li>
+                    <li class="js-btn-movies"><a href="#" class="films-query-name film" data-query="upcoming">Скоро на
+                            экранах</a></li>
+
+                    <li class="js-btn-toprated"><a href="#" class="films-query-name film" data-query="top_rated">Лучшие
+                            в
+                            рейтинге</a></li>
+                </ul>
+                <h2 class="films-head"><i class="fas fa-video"></i>Сериалы</h2>
+                <ul class="films-category-list js-nav-list">
+                    <li class="js-btn-toprated"><a href="#" class="TV-query-name TV" data-query="airing_today">
+
+                            Сейчас в кино</a></li>
+                    <li class="js-btn-latest"><a href="#" class="TV-query-name TV" data-query="popular">Популярнные</a></li>
+                    <li class="js-btn-movies"><a href="#" class="TV-query-name TV" data-query="top_rated">Лучшие в
+                            рейтинге</a></li>
+
+
+                </ul>
+                <h2 class="films-head js-favorites-list favorites"><i class="fas fa-star"></i>
+                    Избранное</h2>
+            </div>
+
+
+        </div>
+
+        <div class="container">
+
+        </div>
+
+        {{>pagination}}
     </div>
-    {{!-- <div class="list serias">
-        serias
-        <ul class="top-category-list">
-            <li class="js-btn-latest"><a href="#">latest</a></li>
-            <li class="js-btn-movies"><a href="#">upComing</a></li>
-
-            <li class="js-btn-toprated"><a href="#">top rated</a></li>
-        </ul>
-    </div> --}}
-    {{!-- <select name="genres" id="genres">
-        <option value="">--genres--</option>
-        <option value="28">Action</option>
-        <option value="12">Adventure</option>
-        <option value="16">Animation</option>
-        <option value="35">Comedy</option>
-        <option value="80">Crime</option>
-        <option value="99">Documentary</option>
-    </select> --}}
-    <div class="container"></div>
-
 
 </main>

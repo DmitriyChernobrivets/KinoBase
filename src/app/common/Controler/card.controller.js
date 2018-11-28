@@ -1,12 +1,7 @@
-// import { Controller } from "../../mvc/controller";
-// import { cardView } from "../View/card.view";
-// import { model } from "../Model/Model";
-
 export class CardController {
   constructor(view, model) {
     this.view = view;
     this.model = model;
-    // super(view, model);
 
     this.view.on("cardEnterFilms", this.onCardClickFilms.bind(this));
     this.view.on("cardEnterTV", this.onCardClickTV.bind(this));

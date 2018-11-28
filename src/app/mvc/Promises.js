@@ -4,18 +4,20 @@ export class Promises {
     this.API_KEY = "fee40cf045e7a2ddd3eb575c5bb1c4eb";
     this.url = "https://api.themoviedb.org/3/";
   }
-  async filmsPromise(query) {
+  async filmsPromise(query, page) {
     return await axios
       .get(
         `${this.url}movie/${query}?api_key=${
           this.API_KEY
-        }&language=ru-RU&page=1`
+        }&language=ru-RU&page=${page}`
       )
       .catch(err => console.log(err));
   }
-  async SeriasPromise(query) {
+  async SeriasPromise(query, page) {
     return await axios.get(
-      `${this.url}tv/${query}?api_key=${this.API_KEY}&language=ru-RU&page=1`
+      `${this.url}tv/${query}?api_key=${
+        this.API_KEY
+      }&language=ru-RU&page=${page}`
     );
   }
   async searchInputPromise(query) {

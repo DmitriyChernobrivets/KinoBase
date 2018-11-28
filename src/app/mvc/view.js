@@ -11,6 +11,7 @@ export class View {
     const markup = this.template(data);
     this.el.innerHTML = markup;
   }
+
   renderFav(data) {
     this.el = document.querySelector(this.selector);
     if (!this.el) throw new Error(`Component ${this.selector} wasn't found`);
