@@ -37,7 +37,9 @@ export class Model extends Promises {
     localStorage.setItem("item", JSON.stringify(this.localStorageArray));
   }
   getLocalItems() {
-    const item = JSON.parse(localStorage.getItem("item"));
+    const item = localStorage.getItem("item")
+      ? JSON.parse(localStorage.getItem("item"))
+      : [];
 
     return item;
   }

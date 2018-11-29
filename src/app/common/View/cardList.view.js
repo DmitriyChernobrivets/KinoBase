@@ -8,7 +8,7 @@ export class CardListView extends View {
     this.serasTVBtn = document.querySelector(".js-top-serias-btn");
     this.searchBtn = document.querySelector(".search-btn");
     this.searchInput = document.querySelector(".search");
-    this.pagination = document.querySelector(".pagination-wrapper");
+
     document.body.addEventListener("click", this.getFilmsCategory.bind(this));
     document.body.addEventListener("click", this.getTVCategory.bind(this));
     this.searchBtn.addEventListener("click", this.getGlobalsearch.bind(this));

@@ -3,9 +3,13 @@
   -moz-box-shadow: 10px 5px 19px -8px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 5px 19px -8px rgba(0, 0, 0, 0.75);
   transition: 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+  @media screen and (max-width: 480px) {
+    width: 220px;
+  }
   .aside-logo {
     height: 200px;
-    background-color: #77c1bb;
+    background-color: rgba(42, 42, 65, 0.8);
+    // background-color: #77c1bb;
     background-image: url("../images//cinema2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -40,11 +44,15 @@
       margin-bottom: 20px;
       font-size: 22px;
       color: #6b6377;
+      cursor: pointer;
       & i {
         margin-right: 25px;
+        @media screen and (max-width: 480px) {
+          margin-right: 15px;
+        }
       }
       &:hover {
-        color: #77c1bb;
+        color: rgba(221, 8, 8, 0.6);
       }
     }
     .films-category-list {
@@ -58,6 +66,9 @@
         & > a {
           font-size: 16px;
           color: #6b6377;
+          &:hover {
+            color: rgba(221, 8, 8, 0.6);
+          }
         }
       }
     }
@@ -84,7 +95,7 @@
   display: block;
 }
 .top-nav-open {
-  background-color: rgba(49, 39, 110, 0.3);
+  background-color: rgba(155, 40, 25, 0.6);
 }
 .top-menu-link {
   font-size: 18px;
@@ -96,7 +107,7 @@
   justify-content: center;
   box-shadow: -2px 20px 15px -17px rgb(22, 18, 54);
   border-bottom: 2px outset #132b43;
-  background-color: rgba(49, 39, 110, 0.3);
+  background-color: rgba(116, 10, 10, 0.6);
   & > li {
     padding: 15px 0 15px 0;
   }

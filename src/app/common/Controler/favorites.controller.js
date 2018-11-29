@@ -13,6 +13,7 @@ export class FavoritesController {
   }
   drawFavList() {
     const arr = this.model.getLocalItems();
+    this.view.hidePagination();
     arr.length !== 0
       ? this.view.render(arr)
       : this.view.render(this.model.errorObject);

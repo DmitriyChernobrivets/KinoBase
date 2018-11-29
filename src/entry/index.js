@@ -13,6 +13,7 @@ import { Navigation } from "../app/common/navigation/navigation";
 import { FavoritesView } from "../app/common/View/favorites.view";
 import { FavoritesController } from "../app/common/Controler/favorites.controller";
 import favorites from "../templates/favorites-list.hbs";
+
 const bodyMarkup = bodyTemplate();
 document.body.innerHTML = bodyMarkup;
 

@@ -22,6 +22,9 @@ export class CardListController {
       // .then(res => console.log(res.data))
       .then(({ data }) => {
         this.model.tempArray = data.results;
+        // console.log(this.view.pagination);
+
+        this.view.hidePagination(true);
 
         this.view.render(data.results);
         this.model.updateStars();
@@ -39,12 +42,12 @@ export class CardListController {
       })
       .catch(err => console.log(err));
   }
-  popularSeriasTv() {
-    this.model
-      .popularSeriasPromise()
-      .then(({ data }) => this.view.render(data.results))
-      .catch(err => console.log(err));
-  }
+  // popularSeriasTv() {
+  //   this.model
+  //     .popularSeriasPromise()
+  //     .then(({ data }) => this.view.render(data.results))
+  //     .catch(err => console.log(err));
+  // }
   globalSearchList(query) {
     this.model
       .searchInputPromise(query)
@@ -53,6 +56,7 @@ export class CardListController {
           this.view.render(this.model.errorObject);
         } else {
           this.model.tempArray = data.results;
+          this.view.hidePagination();
           this.view.render(data.results);
           this.model.updateStars();
         }

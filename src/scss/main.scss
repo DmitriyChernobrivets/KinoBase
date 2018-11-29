@@ -1,8 +1,19 @@
 .wrapper {
+  // width: 1200px;
   width: 1200px;
-
   margin: 0 auto;
+  min-width: 420px;
   min-height: 800px;
+  @media screen and (min-width: 998px) and (max-width: 1200px) {
+    width: 900px;
+  }
+
+  @media screen and (min-width: 798px) and (max-width: 998px) {
+    width: 800px;
+  }
+  @media screen and(max-width: 797px) {
+    width: 100%;
+  }
 }
 .main {
   // background-image: ;

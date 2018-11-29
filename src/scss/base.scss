@@ -11,12 +11,12 @@ a {
 }
 body {
   padding: 0 15px;
-
+  min-width: 420px;
   background: linear-gradient(
     135deg,
     rgb(247, 250, 252) 0%,
-    rgb(194, 194, 194) 1%,
-    rgba(21, 25, 64, 1) 100%
+    rgb(247, 245, 245) 1%,
+    rgb(213, 214, 226) 100%
   );
 }
 body,

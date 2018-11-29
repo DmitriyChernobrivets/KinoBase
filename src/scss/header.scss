@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 797px) {
+    justify-content: flex-end;
+  }
   // height: 85px;
   // width: 100%;
   padding: 20px 60px 20px 60px;
@@ -19,13 +22,15 @@
 }
 .logo {
   position: relative;
-  // background-image: url("../images/star.svg");
+  display: block;
   .logo-img {
     position: absolute;
     left: 0;
     top: -25px;
   }
-
+  @media screen and (max-width: 797px) {
+    display: none;
+  }
   .logo-link {
     position: relative;
     top: 5px;
@@ -41,11 +46,10 @@
   background-color: transparent;
   padding: 12px 7px 5px 37px;
   border-bottom: 2px solid #f8f8f8;
-  height: 40px;
+  // height: 40px;
   font-size: 22px;
   color: white;
-  width: 180px;
-  transition: 0.2s linear;
+  width: 220px;
 }
 .search-btn {
   position: absolute;
@@ -58,5 +62,6 @@
   i {
     color: white;
     font-size: 22px;
+    cursor: pointer;
   }
 }
