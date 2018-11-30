@@ -1,7 +1,3 @@
-// import { Controller } from "../../mvc/controller";
-// import { cardListView } from "../View/cardList.view";
-// import { model } from "../Model/Model";
-// import { lory } from "../../../helpers/slider/lory.min.js";
 export class CardListController {
   constructor(view, model) {
     // super(view, model);
@@ -11,9 +7,9 @@ export class CardListController {
       "DOMContentLoaded",
       this.filmsCardList.bind(this, "now_playing")
     );
-    this.view.on("films", this.filmsCardList.bind(this));
-    this.view.on("TV", this.tvCardList.bind(this));
-    this.view.on("globalSearch", this.globalSearchList.bind(this));
+    this.view.eventOn("films", this.filmsCardList.bind(this));
+    this.view.eventOn("TV", this.tvCardList.bind(this));
+    this.view.eventOn("globalSearch", this.globalSearchList.bind(this));
   }
 
   filmsCardList(query, page) {
@@ -42,12 +38,7 @@ export class CardListController {
       })
       .catch(err => console.log(err));
   }
-  // popularSeriasTv() {
-  //   this.model
-  //     .popularSeriasPromise()
-  //     .then(({ data }) => this.view.render(data.results))
-  //     .catch(err => console.log(err));
-  // }
+
   globalSearchList(query) {
     this.model
       .searchInputPromise(query)

@@ -4,7 +4,7 @@ export class FavoritesView extends View {
   constructor(template) {
     super(template);
     this.cardList = document.querySelector(".container");
-
+    this.favoriteBtn = document.querySelector(".favorites");
     this.cardList.addEventListener(
       "click",
       this.favoritesOnStarClickId.bind(this)
@@ -16,13 +16,13 @@ export class FavoritesView extends View {
   openFavorites({ target }) {
     if (!target.classList.contains("js-favorites-list")) return;
 
-    this.emite("openFavoritesList");
+    this.eventEmite("openFavoritesList");
   }
   deleteFavCard({ target }) {
     if (!target.classList.contains("js-close-btn")) return;
     const item = target.closest("li");
     item.remove();
-    this.emite("cardFavoritesDelete", item.dataset.id);
+    this.eventEmite("cardFavoritesDelete", item.dataset.id);
   }
   toogleFavStyle(target) {
     target.classList.toggle("fav-selected");
@@ -36,7 +36,7 @@ export class FavoritesView extends View {
 
     this.toogleFavStyle(target);
     if (!target.classList.contains("fav-selected")) {
-      this.emite("cardFavoritesDelete", id, currentCategory);
-    } else this.emite("cardFavoritesAdd", id, currentCategory);
+      this.eventEmite("cardFavoritesDelete", id, currentCategory);
+    } else this.eventEmite("cardFavoritesAdd", id, currentCategory);
   }
 }

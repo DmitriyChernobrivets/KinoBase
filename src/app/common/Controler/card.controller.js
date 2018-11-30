@@ -3,8 +3,8 @@ export class CardController {
     this.view = view;
     this.model = model;
 
-    this.view.on("cardEnterFilms", this.onCardClickFilms.bind(this));
-    this.view.on("cardEnterTV", this.onCardClickTV.bind(this));
+    this.view.eventOn("cardEnterFilms", this.onCardClickFilms.bind(this));
+    this.view.eventOn("cardEnterTV", this.onCardClickTV.bind(this));
   }
   onCardClickFilms(id) {
     this.model

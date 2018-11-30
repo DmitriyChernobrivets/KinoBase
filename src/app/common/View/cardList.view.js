@@ -11,7 +11,10 @@ export class CardListView extends View {
 
     document.body.addEventListener("click", this.getFilmsCategory.bind(this));
     document.body.addEventListener("click", this.getTVCategory.bind(this));
-    this.searchBtn.addEventListener("click", this.getGlobalsearch.bind(this));
+    this.searchBtn.addEventListener(
+      "click",
+      this.getGlobalsearchValue.bind(this)
+    );
     this.pagination.addEventListener(
       "click",
       this.getPaginationValue.bind(this)
@@ -20,28 +23,35 @@ export class CardListView extends View {
 
   getFilmsCategory({ target }) {
     if (target.classList.contains("film")) {
-      this.emite("films", target.dataset.query);
+      this.eventEmite("films", target.dataset.query);
       setCurrentPagePaginationStyle(null, true);
     }
   }
   getTVCategory({ target }) {
     if (target.classList.contains("TV")) {
-      this.emite("TV", target.dataset.query);
+      this.eventEmite("TV", target.dataset.query);
       setCurrentPagePaginationStyle(null, true);
     }
   }
-  getGlobalsearch() {
+  getGlobalsearchValue() {
     const value = this.searchInput.value;
-    this.emite("globalSearch", value);
+    this.eventEmite("globalSearch", value);
     this.searchInput.value = "";
   }
   getPaginationValue({ target }) {
     if (!target.classList.contains("page-numbers")) return;
-    // const currentCategoryValue = currentCategory();
     setCurrentPagePaginationStyle(target);
     this.filmsBtn.classList.contains("top-nav-open")
-      ? this.emite("films", this.filmsBtn.dataset.query, target.textContent)
-      : this.emite("TV", this.serasTVBtn.dataset.query, target.textContent);
+      ? this.eventEmite(
+          "films",
+          this.filmsBtn.dataset.query,
+          target.textContent
+        )
+      : this.eventEmite(
+          "TV",
+          this.serasTVBtn.dataset.query,
+          target.textContent
+        );
   }
 }
 

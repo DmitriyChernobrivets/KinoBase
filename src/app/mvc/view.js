@@ -24,11 +24,11 @@ export class View {
       this.pagination.classList.remove("hide-pagination");
     } else this.pagination.classList.add("hide-pagination");
   }
-  on(type, listener) {
+  eventOn(type, listener) {
     this.events[type] = this.events[type] || [];
     this.events[type].push(listener);
   }
-  emite(type, ...args) {
+  eventEmite(type, ...args) {
     if (this.events[type]) {
       this.events[type].forEach(callback => {
         callback(...args);

@@ -1,14 +1,13 @@
-// import { Controller } from "../../mvc/controller";
-
 export class FavoritesController {
   constructor(view, model) {
     this.view = view;
     this.model = model;
-    this.view.on("cardFavoritesAdd", this.putLocalStorage.bind(this));
-    this.view.on("cardFavoritesDelete", this.deleteFavorites.bind(this));
-    this.view.on("openFavoritesList", this.drawFavList.bind(this));
+    this.view.eventOn("cardFavoritesAdd", this.putLocalStorage.bind(this));
+    this.view.eventOn("cardFavoritesDelete", this.deleteFavorites.bind(this));
+    this.view.eventOn("openFavoritesList", this.drawFavList.bind(this));
   }
   deleteFavorites(id) {
+    ifFavoritesEmpty.call(this);
     this.model.deleteFromStorage(id);
   }
   drawFavList() {
@@ -20,5 +19,15 @@ export class FavoritesController {
   }
   putLocalStorage(id, category) {
     this.model.createLocalStorageFav(id, category);
+  }
+}
+
+function ifFavoritesEmpty() {
+  const favoritesList = document.querySelectorAll(".fav-item");
+  if (
+    favoritesList.length === 0 &&
+    this.view.favoriteBtn.classList.contains("top-nav-open")
+  ) {
+    this.view.render(this.model.errorObject);
   }
 }

@@ -63,9 +63,9 @@
   & .genres-list {
     padding: 0;
     margin: 0;
-    display: inline-block;
-    // display: flex;
-    // flex-wrap: wrap;
+    // display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
     // align-items: center;
     // justify-content: space-between;
     & li {

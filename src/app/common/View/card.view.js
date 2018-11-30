@@ -23,9 +23,9 @@ export class CardView extends View {
       this.filmsBtn.classList.contains("top-nav-open") ||
       target.closest("li").dataset.category === "film"
     ) {
-      this.emite("cardEnterFilms", target.closest("li").dataset.id);
+      this.eventEmite("cardEnterFilms", target.closest("li").dataset.id);
     } else {
-      this.emite("cardEnterTV", target.closest("li").dataset.id);
+      this.eventEmite("cardEnterTV", target.closest("li").dataset.id);
     }
   }
   trailerFrameDraw(obj) {
