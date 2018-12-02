@@ -1,4 +1,4 @@
-import { Promises } from "../../mvc/Promises";
+import { Promises } from "../../Services/Promises";
 export class Model extends Promises {
   constructor() {
     super();
@@ -18,30 +18,36 @@ export class Model extends Promises {
   }
   createLocalStorageFav(id, category) {
     const obj = this.getFilmsObjById(id);
-    const alreadyExistedInStorage = this.localStorageArray.find(
-      el => el.id === obj.id
-    );
+    const alreadyExistedInStorage = this.findExistingIdInStorage(id, obj);
     obj.categorys = category;
 
     if (alreadyExistedInStorage) return;
 
     this.localStorageArray.push(obj);
-    localStorage.setItem("item", JSON.stringify(this.localStorageArray));
+    this.setArrayInLocalStorage();
   }
-  deleteFromStorage(id) {
-    const alreadyExistedInStorage = this.localStorageArray.find(
-      el => el.id === +id
-    );
-    if (!alreadyExistedInStorage) return;
-    this.localStorageArray = this.localStorageArray.filter(el => el.id !== +id);
-    localStorage.setItem("item", JSON.stringify(this.localStorageArray));
-  }
-  getLocalItems() {
-    const item = localStorage.getItem("item")
-      ? JSON.parse(localStorage.getItem("item"))
-      : [];
 
-    return item;
+  deleteFromStorage(id) {
+    const alreadyExistedInStorage = this.findExistingIdInStorage(id, null);
+    if (!alreadyExistedInStorage) return;
+    this.removeFromArray(id);
+    this.setArrayInLocalStorage();
+  }
+
+  setArrayInLocalStorage() {
+    localStorage.setItem("item", JSON.stringify(this.localStorageArray));
+  }
+  findExistingIdInStorage(id2, obj) {
+    return this.localStorageArray.find(el => {
+      if (!obj) {
+        return el.id === +id2;
+      } else return el.id === obj.id2;
+    });
+  }
+  removeFromArray(id) {
+    return (this.localStorageArray = this.localStorageArray.filter(
+      el => el.id !== +id
+    ));
   }
   getFilmsObjById(id) {
     return this.tempArray.find(el => el.id === +id);

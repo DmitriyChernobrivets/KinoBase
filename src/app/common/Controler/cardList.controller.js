@@ -1,6 +1,5 @@
 export class CardListController {
   constructor(view, model) {
-    // super(view, model);
     this.view = view;
     this.model = model;
     document.addEventListener(
@@ -44,6 +43,7 @@ export class CardListController {
       .searchInputPromise(query)
       .then(({ data }) => {
         if (data.results.length === 0) {
+          this.view.hidePagination();
           this.view.render(this.model.errorObject);
         } else {
           this.model.tempArray = data.results;

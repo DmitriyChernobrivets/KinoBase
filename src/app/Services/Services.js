@@ -1,4 +1,4 @@
-export class View {
+export class Services {
   constructor(template) {
     this.selector = ".container";
     this.template = template;

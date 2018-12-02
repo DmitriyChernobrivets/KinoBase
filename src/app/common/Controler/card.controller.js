@@ -15,7 +15,6 @@ export class CardController {
         this.view.render(res[1].data);
         this.view.trailerFrameDraw(res[0].data.results[0]);
         this.view.cardSlidersAppend(res[2].data, res[3].data);
-        // this.view.movieImagesSliderCreate(res[3].data);
       })
       .catch(err => console.log(err));
   }

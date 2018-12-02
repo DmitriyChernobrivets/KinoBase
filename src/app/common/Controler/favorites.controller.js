@@ -9,9 +9,10 @@ export class FavoritesController {
   deleteFavorites(id) {
     ifFavoritesEmpty.call(this);
     this.model.deleteFromStorage(id);
+    this.view.showFavModal("DELETED");
   }
   drawFavList() {
-    const arr = this.model.getLocalItems();
+    const arr = this.model.localStorageArray;
     this.view.hidePagination();
     arr.length !== 0
       ? this.view.render(arr)
@@ -19,6 +20,7 @@ export class FavoritesController {
   }
   putLocalStorage(id, category) {
     this.model.createLocalStorageFav(id, category);
+    this.view.showFavModal("ADDED");
   }
 }
 

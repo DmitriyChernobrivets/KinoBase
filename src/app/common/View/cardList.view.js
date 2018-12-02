@@ -1,7 +1,7 @@
 // import cardListTemplate from "../../../templates/cardList.hbs";
-import { View } from "../../mvc/view";
+import { Services } from "../../Services/Services";
 
-export class CardListView extends View {
+export class CardListView extends Services {
   constructor(template) {
     super(template);
     this.filmsBtn = document.querySelector(".js-top-films-btn");
@@ -22,12 +22,14 @@ export class CardListView extends View {
   }
 
   getFilmsCategory({ target }) {
+    ifTopNavClicked(target, "now_playing");
     if (target.classList.contains("film")) {
       this.eventEmite("films", target.dataset.query);
       setCurrentPagePaginationStyle(null, true);
     }
   }
   getTVCategory({ target }) {
+    ifTopNavClicked(target, "on_the_air");
     if (target.classList.contains("TV")) {
       this.eventEmite("TV", target.dataset.query);
       setCurrentPagePaginationStyle(null, true);
@@ -53,6 +55,7 @@ export class CardListView extends View {
           target.textContent
         );
   }
+  favAlertRender() {}
 }
 
 function setCurrentPagePaginationStyle(target, reset) {
@@ -64,4 +67,10 @@ function setCurrentPagePaginationStyle(target, reset) {
   }
   items.forEach(el => el.classList.remove("current"));
   target.classList.add("current");
+}
+
+function ifTopNavClicked(target, subcategory) {
+  if (target.classList.contains("top-menu-link")) {
+    target.dataset.query = subcategory;
+  }
 }

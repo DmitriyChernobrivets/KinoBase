@@ -1,16 +1,16 @@
-import { View } from "../../mvc/view";
+import { Services } from "../../Services/Services";
 
-export class FavoritesView extends View {
+export class FavoritesView extends Services {
   constructor(template) {
     super(template);
     this.cardList = document.querySelector(".container");
     this.favoriteBtn = document.querySelector(".favorites");
+    document.addEventListener("click", this.openFavorites.bind(this));
     this.cardList.addEventListener(
       "click",
       this.favoritesOnStarClickId.bind(this)
     );
     this.cardList.addEventListener("click", this.deleteFavCard.bind(this));
-    document.addEventListener("click", this.openFavorites.bind(this));
   }
 
   openFavorites({ target }) {
@@ -33,10 +33,18 @@ export class FavoritesView extends View {
     const category = document.querySelector(".top-nav-open");
     const currentCategory = category.dataset.category;
     const id = target.closest("li").dataset.id;
-
+    // this.showFavModal("added");
     this.toogleFavStyle(target);
     if (!target.classList.contains("fav-selected")) {
       this.eventEmite("cardFavoritesDelete", id, currentCategory);
     } else this.eventEmite("cardFavoritesAdd", id, currentCategory);
+  }
+  showFavModal(string) {
+    const modalBlock = document.querySelector(".favModal");
+    modalBlock.classList.add("show-modal");
+    modalBlock.innerHTML = string;
+    setTimeout(() => {
+      modalBlock.classList.remove("show-modal");
+    }, 2000);
   }
 }

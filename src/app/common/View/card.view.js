@@ -1,14 +1,19 @@
-import { View } from "../../mvc/view";
+import { Services } from "../../Services/Services";
 
 import trailerFrame from "../../../templates/trailerFrame.hbs";
 import actorsSlider from "../../../templates/actorsSlider.hbs";
 import movieImagesSlider from "../../../templates/movieImagesSlider.hbs";
 
-import { lory } from "../../../helpers/slider/lory.min.js";
-export class CardView extends View {
+import { lory } from "../../Services/slider/lory.min.js";
+export class CardView extends Services {
   constructor(template) {
     super(template);
-
+    this.sliderConfig = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000
+    };
     this.container = document.querySelector(".container");
     this.container.addEventListener("click", this.cardClickEvent.bind(this));
     this.filmsBtn = document.querySelector(".js-top-films-btn");
@@ -39,13 +44,8 @@ export class CardView extends View {
     actorSliderCreate(arr1);
     movieImagesSliderCreate(arr2);
     const slider = document.querySelector(".js_slider");
-    lory(slider, {});
-    $(".slider-slick").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000
-    });
+    lory(slider);
+    $(".slider-slick").slick(this.sliderConfig);
   }
 }
 

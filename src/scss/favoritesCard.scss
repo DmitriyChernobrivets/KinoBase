@@ -11,15 +11,20 @@
     right: 0;
     width: 20px;
     height: 25px;
-    color: white;
+    color: rgb(46, 45, 45);
     font-size: 24px;
-    z-index: 100;
+    z-index: 101;
+    cursor: pointer;
   }
   .title {
     position: absolute;
     z-index: 100;
-    color: white;
+    text-align: center;
+    color: rgb(240, 240, 240);
     left: 50%;
+    width: 100%;
+    z-index: 100;
+    font-size: 15px;
     transform: translateX(-50%);
   }
   display: flex;
@@ -29,6 +34,7 @@
     width: 200px;
     min-height: 300px;
     margin-right: 20px;
+
     & img {
       position: absolute;
       height: auto;
@@ -37,4 +43,19 @@
       left: 0;
     }
   }
+}
+.favModal {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  z-index: 100;
+  display: none;
+}
+.show-modal {
+  display: block;
 }
