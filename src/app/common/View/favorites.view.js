@@ -19,7 +19,9 @@ export class FavoritesView extends Services {
     this.eventEmite("openFavoritesList");
   }
   deleteFavCard({ target }) {
+    console.log(target);
     if (!target.classList.contains("js-close-btn")) return;
+
     const item = target.closest("li");
     item.remove();
     this.eventEmite("cardFavoritesDelete", item.dataset.id);
@@ -30,10 +32,9 @@ export class FavoritesView extends Services {
 
   favoritesOnStarClickId({ target }) {
     if (!target.classList.contains("js-svg")) return;
-    const category = document.querySelector(".top-nav-open");
-    const currentCategory = category.dataset.category;
+    const currentBtn = document.querySelector(".top-nav-open");
+    const currentCategory = currentBtn.dataset.category;
     const id = target.closest("li").dataset.id;
-    // this.showFavModal("added");
     this.toogleFavStyle(target);
     if (!target.classList.contains("fav-selected")) {
       this.eventEmite("cardFavoritesDelete", id, currentCategory);

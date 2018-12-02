@@ -31,10 +31,24 @@
   flex-wrap: wrap;
   .fav-item {
     position: relative;
+    padding: 10px;
+    cursor: pointer;
     width: 200px;
     min-height: 300px;
     margin-right: 20px;
-
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    &:hover .card-list_overlay {
+      opacity: 0.2;
+      transition: 0.2s linear;
+    }
+    & svg {
+      z-index: 101;
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+    }
     & img {
       position: absolute;
       height: auto;
