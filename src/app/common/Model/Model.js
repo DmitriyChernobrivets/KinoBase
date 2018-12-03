@@ -9,7 +9,7 @@ export class Model extends Promises {
       : [];
     this.errorObject = [
       {
-        notFound: "Ничего не найдено"
+        notFound: "Закладки пусты"
       },
       {
         badRequest: "По вышему запросу ничего не найдено :("

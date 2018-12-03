@@ -22,14 +22,14 @@ export class CardListView extends Services {
   }
 
   getFilmsCategory({ target }) {
-    ifTopNavClicked(target, "now_playing");
+    // ifTopNavClicked(target, "now_playing");
     if (target.classList.contains("film")) {
       this.eventEmite("films", target.dataset.query);
       setCurrentPagePaginationStyle(null, true);
     }
   }
   getTVCategory({ target }) {
-    ifTopNavClicked(target, "on_the_air");
+    // ifTopNavClicked(target, "on_the_air");
     if (target.classList.contains("TV")) {
       this.eventEmite("TV", target.dataset.query);
       setCurrentPagePaginationStyle(null, true);

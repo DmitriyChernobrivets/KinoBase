@@ -1,25 +1,31 @@
 .footer {
-  height: 80px;
+  // height: 120px;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 15px 0;
   .socials {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .foo-list {
     display: flex;
     justify-content: center;
+
     .socials-item {
-      margin-left: 20px;
+      margin-left: 30px;
     }
     & li {
-      margin-right: 15px;
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
       & a {
         font-size: 16px;
         color: #6b6377;
+        &:hover {
+          color: #f0f1f3;
+        }
         & i {
           font-size: 30px;
           &:hover {
-            color: #1565c0;
+            color: #f0f1f3;
           }
         }
       }

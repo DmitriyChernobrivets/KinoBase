@@ -4,7 +4,7 @@ export class Promises {
     this.API_KEY = "fee40cf045e7a2ddd3eb575c5bb1c4eb";
     this.url = "https://api.themoviedb.org/3/";
   }
-  async filmsPromise(query, page) {
+  async filmsPromise(query, page = "1") {
     return await axios
       .get(
         `${this.url}movie/${query}?api_key=${

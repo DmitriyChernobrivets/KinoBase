@@ -38,6 +38,11 @@ export class Navigation {
     if (!target.classList.contains("top-menu-link")) return;
     this.topNavMenuLinks.forEach(el => el.classList.remove("top-nav-open"));
     target.classList.add("top-nav-open");
+    if (target.classList.contains("film")) {
+      ifTopNavClicked(target, "now_playing");
+    } else if (target.classList.contains("TV")) {
+      ifTopNavClicked(target, "on_the_air");
+    }
   }
   asidemenuClick({ target }) {
     const currentSubCategory = target.dataset.query;
@@ -59,4 +64,10 @@ function currentTopNavPosition(category, subcategory) {
       el.dataset.query = subcategory;
     }
   });
+}
+
+function ifTopNavClicked(target, subcategory) {
+  if (target.classList.contains("top-menu-link")) {
+    target.dataset.query = subcategory;
+  }
 }

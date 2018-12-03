@@ -44,7 +44,9 @@ export class CardView extends Services {
     actorSliderCreate(arr1);
     movieImagesSliderCreate(arr2);
     const slider = document.querySelector(".js_slider");
-    lory(slider);
+    lory(slider, {
+      slidesToScroll: 3
+    });
     $(".slider-slick").slick(this.sliderConfig);
   }
 }

@@ -1,5 +1,3 @@
-//----------  responsive breakpoints
-//------------------------------------------------------------------------------
 @mixin breakpoint($value) {
   @if $value == "phone" {
     @media only screen and (min-width: 120px) and (max-width: 767px) {
@@ -58,14 +56,14 @@ a {
 
 .pagination {
   display: inline-block;
-  height: 50px;
+  height: 40px;
   // margin-top: 70px;
   padding: 0 25px;
   border-radius: 35px;
   background-color: $grey-light;
 
   @include breakpoint(1199px) {
-    height: 50px;
+    height: 40px;
     margin-top: 30px;
     padding: 0 20px;
     border-radius: 25px;
@@ -74,13 +72,13 @@ a {
 
 .page-numbers {
   display: block;
-  padding: 0 15px;
+  padding: 0 13px;
   float: left;
   transition: $duration $easing;
   color: $grey;
   font-size: 20px;
   letter-spacing: 0.1em;
-  line-height: 50px;
+  line-height: 40px;
   cursor: pointer;
   &:hover,
   &.current {
@@ -97,22 +95,22 @@ a {
   @include breakpoint(1199px) {
     padding: 0 15px;
     font-size: 16px;
-    line-height: 50px;
+    line-height: 40px;
   }
 
-  @include breakpoint(touch) {
-    padding: 0 14px;
-    display: none;
+  // @include breakpoint(touch) {
+  //   padding: 0 14px;
+  //   display: none;
 
-    &:nth-child(-n + 3),
-    &:nth-last-child(-n + 3) {
-      display: block;
-    }
+  //   &:nth-child(-n + 3),
+  //   &:nth-last-child(-n + 3) {
+  //     display: block;
+  //   }
 
-    &:nth-last-child(-n + 4) {
-      padding-right: 14px;
-    }
-  }
+  //   &:nth-last-child(-n + 4) {
+  //     padding-right: 14px;
+  //   }
+  // }
 }
 .hide-pagination {
   display: none;

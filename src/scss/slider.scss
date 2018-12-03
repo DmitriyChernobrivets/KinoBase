@@ -50,7 +50,8 @@
 }
 .slider-head {
   margin-bottom: 25px;
-  margin-right: auto;
+  align-self: flex-start;
+  // margin-right: auto;
 }
 .prev,
 .next {

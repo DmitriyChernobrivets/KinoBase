@@ -3,13 +3,13 @@
   -moz-box-shadow: 10px 5px 19px -8px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 5px 19px -8px rgba(0, 0, 0, 0.75);
   transition: 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
-  @media screen and (max-width: 480px) {
-    width: 220px;
-  }
+  // @media screen and (max-width: 480px) {
+  //   width: 240px;
+  // }
   .aside-logo {
     height: 200px;
     background-color: rgba(42, 42, 65, 0.8);
-    // background-color: #77c1bb;
+
     background-image: url("../images//cinema2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
