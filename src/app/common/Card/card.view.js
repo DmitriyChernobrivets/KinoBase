@@ -1,10 +1,10 @@
-import { Services } from "../../Services/Services";
+import { Services } from "../extends/Services";
 
 import trailerFrame from "../../../templates/trailerFrame.hbs";
 import actorsSlider from "../../../templates/actorsSlider.hbs";
 import movieImagesSlider from "../../../templates/movieImagesSlider.hbs";
 
-import { lory } from "../../Services/slider/lory.min.js";
+import { lory } from "../../helpers/slider/lory.min.js";
 export class CardView extends Services {
   constructor(template) {
     super(template);

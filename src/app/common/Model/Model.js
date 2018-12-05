@@ -1,4 +1,4 @@
-import { Promises } from "../../Services/Promises";
+import { Promises } from "../extends/Promises";
 export class Model extends Promises {
   constructor() {
     super();
@@ -13,16 +13,18 @@ export class Model extends Promises {
       },
       {
         badRequest: "По вышему запросу ничего не найдено :("
+      },
+      {
+        NetworkError: "Network Error, Try again later"
       }
     ];
   }
   createLocalStorageFav(id, category) {
     const obj = this.getFilmsObjById(id);
     const alreadyExistedInStorage = this.findExistingIdInStorage(id, obj);
-    obj.categorys = category;
-
     if (alreadyExistedInStorage) return;
-
+    
+    obj.categorys = category;
     this.localStorageArray.push(obj);
     this.setArrayInLocalStorage();
   }

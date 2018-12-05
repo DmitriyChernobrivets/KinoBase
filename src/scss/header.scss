@@ -4,7 +4,10 @@
   align-items: center;
   @media screen and (max-width: 797px) {
     justify-content: flex-end;
+    min-height: 80px;
+    padding-right: 60px;
   }
+
   // height: 85px;
   // width: 100%;
   padding: 20px 60px 20px 60px;
@@ -44,21 +47,27 @@
 }
 .search {
   background-color: transparent;
-  padding: 12px 7px 5px 37px;
+  padding: 15px 7px 5px 37px;
   border-bottom: 2px solid #f8f8f8;
   // height: 40px;
+  width: 200px;
   font-size: 22px;
   color: white;
   width: 220px;
+  @media screen and (max-width: 797px) {
+    width: 180px;
+  }
 }
 .search-btn {
   position: absolute;
   left: 0;
-  top: 20%;
+  top: 25%;
   background-color: transparent;
   width: 30px;
   height: 30px;
   border: none;
+  cursor: pointer;
+
   i {
     color: white;
     font-size: 22px;

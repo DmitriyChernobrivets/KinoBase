@@ -3,7 +3,7 @@
     {{#if id}}
     <li class="card-list_item" data-id={{id}}>
         <svg class="card-svg js-svg" id="svg" height="25" width="25">
-            <use class="js-svg" href="./images/star.svg#Capa_1"></use>
+            <use class="js-svg" href="../images/star.svg#Capa_1"></use>
         </svg>
 
         <div class="card-list_vote">{{vote_average}}</div>
@@ -16,7 +16,7 @@
         <h2 class="card-list_title">{{name}}</h2>
         {{/if}}
     </li>
-    {{else}}
+    {{else }}
     <h2 class="list-err">{{badRequest}}</h2>
     {{/if}}
     {{/each}}

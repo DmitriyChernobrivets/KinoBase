@@ -17,14 +17,13 @@ export class CardListController {
       // .then(res => console.log(res.data))
       .then(({ data }) => {
         this.model.tempArray = data.results;
-        // console.log(this.view.pagination);
 
         this.view.hidePagination(true);
 
         this.view.render(data.results);
         this.model.updateStars();
       })
-      .catch(err => console.log(err));
+      .catch(error => console.log(error));
   }
   tvCardList(query, page) {
     this.model

@@ -1,4 +1,4 @@
-import { Services } from "../../Services/Services";
+import { Services } from "../extends/Services";
 
 export class FavoritesView extends Services {
   constructor(template) {
@@ -19,7 +19,6 @@ export class FavoritesView extends Services {
     this.eventEmite("openFavoritesList");
   }
   deleteFavCard({ target }) {
-    console.log(target);
     if (!target.classList.contains("js-close-btn")) return;
 
     const item = target.closest("li");

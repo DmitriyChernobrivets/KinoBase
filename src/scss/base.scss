@@ -12,12 +12,13 @@ a {
 body {
   padding: 0 15px;
   min-width: 420px;
-  background: linear-gradient(
-    135deg,
-    rgb(247, 250, 252) 0%,
-    rgb(247, 245, 245) 1%,
-    rgb(213, 214, 226) 100%
-  );
+
+  background-image: url("../images/Paramount-100-years-large.jpg");
+  background-size: contain 100%;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
 }
 body,
 html,

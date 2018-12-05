@@ -1,11 +1,10 @@
 .wrapper {
-  // width: 1200px;
   width: 1200px;
   margin: 0 auto;
   min-width: 420px;
   min-height: 800px;
   @media screen and (min-width: 998px) and (max-width: 1200px) {
-    width: 900px;
+    width: 998px;
   }
 
   @media screen and (min-width: 798px) and (max-width: 998px) {
@@ -16,11 +15,9 @@
   }
 }
 .main {
-  // background-image: ;
-
   padding-top: 25px;
 }
 .container {
   padding: 15px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(2, 29, 59, 0.9);
 }

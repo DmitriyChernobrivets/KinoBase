@@ -1,17 +1,16 @@
 import "../scss/styles.scss";
 import img from "../images/star.svg";
-
 import bodyTemplate from "../templates/body.hbs";
 import cardListTemplate from "../templates/cardList.hbs";
 import cardFilms from "../templates/cardFilms.hbs";
 import { Model } from "../app/common/Model/Model";
-import { CardListView } from "../app/common/View/cardList.view";
-import { CardListController } from "../app/common/Controler/cardList.controller";
-import { CardView } from "../app/common/View/card.view";
-import { CardController } from "../app/common/Controler/card.controller";
+import { CardListView } from "../app/common/Card-List/cardList.view";
+import { CardListController } from "../app/common/Card-List/cardList.controller";
+import { CardView } from "../app/common/Card/card.view";
+import { CardController } from "../app/common/Card/card.controller";
 import { Navigation } from "../app/common/navigation/navigation";
-import { FavoritesView } from "../app/common/View/favorites.view";
-import { FavoritesController } from "../app/common/Controler/favorites.controller";
+import { FavoritesView } from "../app/common/Favorites/favorites.view";
+import { FavoritesController } from "../app/common/Favorites/favorites.controller";
 import favorites from "../templates/favorites-list.hbs";
 
 const bodyMarkup = bodyTemplate();

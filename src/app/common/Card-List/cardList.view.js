@@ -1,18 +1,18 @@
 // import cardListTemplate from "../../../templates/cardList.hbs";
-import { Services } from "../../Services/Services";
+import { Services } from "../extends/Services";
 
 export class CardListView extends Services {
   constructor(template) {
     super(template);
     this.filmsBtn = document.querySelector(".js-top-films-btn");
     this.serasTVBtn = document.querySelector(".js-top-serias-btn");
-    this.searchBtn = document.querySelector(".search-btn");
+    this.searchForm = document.querySelector(".search-container");
     this.searchInput = document.querySelector(".search");
 
     document.body.addEventListener("click", this.getFilmsCategory.bind(this));
     document.body.addEventListener("click", this.getTVCategory.bind(this));
-    this.searchBtn.addEventListener(
-      "click",
+    this.searchForm.addEventListener(
+      "submit",
       this.getGlobalsearchValue.bind(this)
     );
     this.pagination.addEventListener(
@@ -22,20 +22,21 @@ export class CardListView extends Services {
   }
 
   getFilmsCategory({ target }) {
-    // ifTopNavClicked(target, "now_playing");
     if (target.classList.contains("film")) {
       this.eventEmite("films", target.dataset.query);
       setCurrentPagePaginationStyle(null, true);
     }
   }
   getTVCategory({ target }) {
-    // ifTopNavClicked(target, "on_the_air");
     if (target.classList.contains("TV")) {
       this.eventEmite("TV", target.dataset.query);
       setCurrentPagePaginationStyle(null, true);
     }
   }
-  getGlobalsearchValue() {
+  getGlobalsearchValue(e) {
+    e.preventDefault();
+
+    if (!this.searchInput.value) return;
     const value = this.searchInput.value;
     this.eventEmite("globalSearch", value);
     this.searchInput.value = "";
@@ -55,7 +56,6 @@ export class CardListView extends Services {
           target.textContent
         );
   }
-  favAlertRender() {}
 }
 
 function setCurrentPagePaginationStyle(target, reset) {
@@ -67,10 +67,4 @@ function setCurrentPagePaginationStyle(target, reset) {
   }
   items.forEach(el => el.classList.remove("current"));
   target.classList.add("current");
-}
-
-function ifTopNavClicked(target, subcategory) {
-  if (target.classList.contains("top-menu-link")) {
-    target.dataset.query = subcategory;
-  }
 }
