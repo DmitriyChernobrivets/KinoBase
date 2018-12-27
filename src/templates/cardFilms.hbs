@@ -20,19 +20,20 @@
                         {{/each}}
                         {{else}}
                         {{#each origin_country}}
-                        <li><a href="#">{{title}}</a></li>
+
+                        <li><a href="#">{{this}}</a></li>
                         {{/each}}
                         {{/if}}
                     </ul>
 
                 </li>
                 <li class="content-items">
-                    {{#if tagline}}
-                    <p class="about-title">Подзаголовок:</p>
-                    <p class="discription">"{{tagline}}"</p>
+                    {{#if original_title}}
+                    <p class="about-title">Оригинальное название:</p>
+                    <p class="discription">{{original_title}}</p>
                     {{else}}
-                    <p class="about-title">Кол-во сезонов:</p>
-                    <p class="discription">{{number_of_seasons}} сезонов.</p>
+                    <p class="about-title">Оригинальное название:</p>
+                    <p class="discription">{{original_name}}</p>
                     {{/if}}
                 </li>
                 <li class="content-items">

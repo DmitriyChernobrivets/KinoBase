@@ -22,32 +22,22 @@
   }
 }
 
-// Colors
 $white: #fff;
 $black: #000;
 $grey: #595959;
 $grey-dark: #2b2b2b;
 $grey-light: #eee;
-$green: rgba(116, 10, 10, 0.6);
+$green: rgba(4, 36, 68, 0.8);
 $blue: #017ac7;
 
-// Transition
 $duration: 400ms;
 $easing: ease;
 
-//----------  reset
-//------------------------------------------------------------------------------
-htm,
+html,
 body {
   font-family: sans-serif;
 }
 
-a {
-  text-decoration: none;
-}
-
-//----------  pagination
-//------------------------------------------------------------------------------
 .pagination-wrapper {
   text-align: center;
   padding: 40px 0 0 0;
@@ -57,7 +47,7 @@ a {
 .pagination {
   display: inline-block;
   height: 40px;
-  // margin-top: 70px;
+
   padding: 0 25px;
   border-radius: 35px;
   background-color: $grey-light;
@@ -98,19 +88,6 @@ a {
     line-height: 40px;
   }
 
-  // @include breakpoint(touch) {
-  //   padding: 0 14px;
-  //   display: none;
-
-  //   &:nth-child(-n + 3),
-  //   &:nth-last-child(-n + 3) {
-  //     display: block;
-  //   }
-
-  //   &:nth-last-child(-n + 4) {
-  //     padding-right: 14px;
-  //   }
-  // }
 }
 .hide-pagination {
   display: none;

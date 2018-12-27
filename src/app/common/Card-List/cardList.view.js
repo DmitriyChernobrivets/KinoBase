@@ -1,5 +1,6 @@
 // import cardListTemplate from "../../../templates/cardList.hbs";
 import { Services } from "../extends/Services";
+import { setCurrentPagePaginationStyle } from "../../helpers/helpers.functions"
 
 export class CardListView extends Services {
   constructor(template) {
@@ -46,25 +47,15 @@ export class CardListView extends Services {
     setCurrentPagePaginationStyle(target);
     this.filmsBtn.classList.contains("top-nav-open")
       ? this.eventEmite(
-          "films",
-          this.filmsBtn.dataset.query,
-          target.textContent
-        )
+        "films",
+        this.filmsBtn.dataset.query,
+        target.textContent
+      )
       : this.eventEmite(
-          "TV",
-          this.serasTVBtn.dataset.query,
-          target.textContent
-        );
+        "TV",
+        this.serasTVBtn.dataset.query,
+        target.textContent
+      );
   }
 }
 
-function setCurrentPagePaginationStyle(target, reset) {
-  const items = document.querySelectorAll(".page-numbers");
-  if (reset) {
-    items.forEach(el => el.classList.remove("current"));
-    items[0].classList.add("current");
-    return;
-  }
-  items.forEach(el => el.classList.remove("current"));
-  target.classList.add("current");
-}

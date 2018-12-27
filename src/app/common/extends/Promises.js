@@ -1,4 +1,4 @@
-import errorMsg from "../../../templates/error.hbs";
+import { errorCheck } from "../../helpers/helpers.functions"
 import axios from "axios";
 export class Promises {
   constructor() {
@@ -12,7 +12,7 @@ export class Promises {
     return await axios
       .get(
         `${this.url}movie/${query}?api_key=${
-          this.API_KEY
+        this.API_KEY
         }&language=ru-RU&page=${page}`
       )
 
@@ -22,7 +22,7 @@ export class Promises {
     return await axios
       .get(
         `${this.url}tv/${query}?api_key=${
-          this.API_KEY
+        this.API_KEY
         }&language=ru-RU&page=${page}`
       )
       .catch(errorCheck);
@@ -31,53 +31,39 @@ export class Promises {
     return await axios
       .get(
         `${this.url}search/movie?api_key=${
-          this.API_KEY
+        this.API_KEY
         }&language=en-US&query=${query}&page=1&include_adult=false`
       )
       .catch(errorCheck);
   }
   async cardFilmsPromise(id) {
-    const trailer = await axios.get(
+    const trailer = () => axios.get(
       `${this.url}movie/${id}/videos?api_key=${this.API_KEY}&language=ru-RU`
     );
-    const moviesById = await axios.get(
+    const moviesById = () => axios.get(
       `${this.url}movie/${id}?api_key=${this.API_KEY}&language=ru-RU`
     );
-    const actors = await axios.get(
-      `${this.url}movie/${id}/credits?api_key=${this.API_KEY}`
-    );
-    const movieImages = await axios
+    const actors = () => axios.get(`${this.url}movie/${id}/credits?api_key=${this.API_KEY}`);
+    const movieImages = () => axios
       .get(`${this.url}movie/${id}/images?api_key=${this.API_KEY}`)
+    return await axios.all([trailer(), moviesById(), actors(), movieImages()])
       .catch(errorCheck);
-    return [trailer, moviesById, actors, movieImages];
   }
   async cardTVPromise(id) {
-    const trailer = await axios.get(
+    const trailer = () => axios.get(
       `${this.url}tv/${id}/videos?api_key=${this.API_KEY}&language=ru-RU`
     );
-    const tvById = await axios.get(
+    const tvById = () => axios.get(
       `${this.url}tv/${id}?api_key=${this.API_KEY}&language=ru-RU`
     );
-    const actors = await axios.get(
+    const actors = () => axios.get(
       `${this.url}tv/${id}/credits?api_key=${this.API_KEY}`
     );
-    const tvImages = await axios
+    const tvImages = () => axios
       .get(`${this.url}tv/${id}/images?api_key=${this.API_KEY}`)
+
+    return await axios.all([trailer(), tvById(), actors(), tvImages()])
       .catch(errorCheck);
-    return [trailer, tvById, actors, tvImages];
   }
 }
 
-function rednderError(obj) {
-  const item = document.querySelector(".container");
-  const markup = errorMsg(obj);
-  item.innerHTML = markup;
-}
-function errorCheck(error) {
-  if (error.response === undefined) {
-    rednderError(this.error);
-  }
-  if (error) {
-    rednderError(error.response.data);
-  }
-}

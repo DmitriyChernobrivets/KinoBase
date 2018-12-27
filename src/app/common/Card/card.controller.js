@@ -10,7 +10,8 @@ export class CardController {
     this.model
       .cardFilmsPromise(id)
       .then(res => {
-        // console.log(res);
+
+
         this.view.hidePagination();
         this.view.render(res[1].data);
         this.view.trailerFrameDraw(res[0].data.results[0]);
@@ -22,6 +23,7 @@ export class CardController {
     this.model
       .cardTVPromise(id)
       .then(res => {
+        console.log(res);
         // console.log(res[2], res[3]);
         this.view.hidePagination();
         this.view.render(res[1].data);

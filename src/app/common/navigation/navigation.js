@@ -1,3 +1,5 @@
+import { currentTopNavPosition, ifTopNavClicked } from "../../helpers/helpers.functions"
+
 export class Navigation {
   constructor() {
     this.menuContainer = document.querySelector(".aside-menu");
@@ -53,21 +55,5 @@ export class Navigation {
     } else if (target.classList.contains("favorites")) {
       currentTopNavPosition.call(this, "favorites", null);
     }
-  }
-}
-
-function currentTopNavPosition(category, subcategory) {
-  this.topNavMenuLinks.forEach(el => {
-    el.classList.remove("top-nav-open");
-    if (el.classList.contains(category)) {
-      el.classList.add("top-nav-open");
-      el.dataset.query = subcategory;
-    }
-  });
-}
-
-function ifTopNavClicked(target, subcategory) {
-  if (target.classList.contains("top-menu-link")) {
-    target.dataset.query = subcategory;
   }
 }

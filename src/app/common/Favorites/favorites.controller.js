@@ -1,3 +1,5 @@
+import { ifFavoritesEmpty } from "../../helpers/helpers.functions"
+
 export class FavoritesController {
   constructor(view, model) {
     this.view = view;
@@ -24,12 +26,4 @@ export class FavoritesController {
   }
 }
 
-function ifFavoritesEmpty() {
-  const favoritesList = document.querySelectorAll(".fav-item");
-  if (
-    favoritesList.length === 0 &&
-    this.view.favoriteBtn.classList.contains("top-nav-open")
-  ) {
-    this.view.render(this.model.errorObject);
-  }
-}
+

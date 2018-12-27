@@ -59,6 +59,7 @@
   & .about-title {
     padding-left: 5px;
     color: white;
+    flex-basis: 35%;
   }
   & .genres-list {
     padding: 0;
@@ -76,12 +77,14 @@
   & > .content-list .content-items {
     display: flex;
     justify-content: space-between;
+    
     & .discription {
       flex-basis: 65%;
       display: flex;
+      flex-wrap: wrap;
       & li {
-        padding: 5px 5px 5px 0;
-        margin-right: 5px;
+
+        padding: 5px 15px 5px 0;
         & a {
           color: white;
         }

@@ -1,8 +1,6 @@
 import { Services } from "../extends/Services";
-
 import trailerFrame from "../../../templates/trailerFrame.hbs";
-import actorsSlider from "../../../templates/actorsSlider.hbs";
-import movieImagesSlider from "../../../templates/movieImagesSlider.hbs";
+import { actorSliderCreate, movieImagesSliderCreate } from "../../helpers/helpers.functions"
 
 import { lory } from "../../helpers/slider/lory.min.js";
 export class CardView extends Services {
@@ -51,14 +49,9 @@ export class CardView extends Services {
   }
 }
 
-function actorSliderCreate(arr) {
-  const actorSliderContainer = document.querySelector(".actor-list");
-  const template = actorsSlider(arr);
-  actorSliderContainer.innerHTML = template;
-}
 
-function movieImagesSliderCreate(arr) {
-  const movieImagesContainer = document.querySelector(".movie-images-list");
-  const template = movieImagesSlider(arr);
-  movieImagesContainer.innerHTML = template;
-}
+// function movieImagesSliderCreate(arr) {
+//   const movieImagesContainer = document.querySelector(".movie-images-list");
+//   const template = movieImagesSlider(arr);
+//   movieImagesContainer.innerHTML = template;
+// }
