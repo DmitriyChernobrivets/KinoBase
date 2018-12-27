@@ -12,7 +12,12 @@ a {
 body {
   padding: 0 15px;
   min-width: 420px;
-  background: linear-gradient(135deg, #f7fafc 0%, #f7f5f5 1%, #d5d6e2 100%); }
+  background-image: url(images/Paramount-100-years-large.jpg);
+  background-size: contain 100%;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat; }
 
 body,
 html,
@@ -221,12 +226,9 @@ input {
     font-size: 22px;
     cursor: pointer; }
 
-htm,
+html,
 body {
   font-family: sans-serif; }
-
-a {
-  text-decoration: none; }
 
 .pagination-wrapper {
   text-align: center;
@@ -257,11 +259,11 @@ a {
   line-height: 40px;
   cursor: pointer; }
   .page-numbers:hover, .page-numbers.current {
-    background-color: rgba(116, 10, 10, 0.6);
+    background-color: rgba(4, 36, 68, 0.8);
     color: #fff; }
   .page-numbers.prev:hover, .page-numbers.next:hover {
     background-color: transparent;
-    color: rgba(116, 10, 10, 0.6); }
+    color: rgba(4, 36, 68, 0.8); }
   @media only screen and (max-width: 1199px) {
     .page-numbers {
       padding: 0 15px;
@@ -291,7 +293,7 @@ a {
 
 .container {
   padding: 15px;
-  background-color: rgba(0, 0, 0, 0.2); }
+  background-color: rgba(2, 29, 59, 0.9); }
 
 .card-list.title {
   font-size: 16px;
@@ -403,7 +405,7 @@ a {
   top: 0; }
   .aside-menu .aside-logo {
     height: 200px;
-    background-color: rgba(42, 42, 65, 0.8);
+    background-color: rgba(4, 36, 68, 0.8);
     background-image: url(images/cinema2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -467,7 +469,7 @@ a {
   display: block; }
 
 .top-nav-open {
-  background-color: rgba(155, 40, 25, 0.6); }
+  background-color: rgba(2, 18, 34, 0.8); }
 
 .top-menu-link {
   font-size: 18px;
@@ -478,11 +480,11 @@ a {
   display: flex;
   justify-content: center;
   box-shadow: -2px 20px 15px -17px #161236;
-  background-color: rgba(116, 10, 10, 0.6); }
+  background-color: rgba(2, 29, 59, 0.8); }
   .top-nav-menu_list > li {
     padding: 15px 0 15px 0; }
     .top-nav-menu_list > li a:hover {
-      background-color: rgba(126, 37, 37, 0.6); }
+      background-color: rgba(15, 67, 128, 0.8); }
 
 .card {
   padding: 15px; }
@@ -535,7 +537,8 @@ a {
     color: white; }
   .card-content .about-title {
     padding-left: 5px;
-    color: white; }
+    color: white;
+    flex-basis: 35%; }
   .card-content .genres-list {
     padding: 0;
     margin: 0;
@@ -549,10 +552,10 @@ a {
     justify-content: space-between; }
     .card-content > .content-list .content-items .discription {
       flex-basis: 65%;
-      display: flex; }
+      display: flex;
+      flex-wrap: wrap; }
       .card-content > .content-list .content-items .discription li {
-        padding: 5px 5px 5px 0;
-        margin-right: 5px; }
+        padding: 5px 15px 5px 0; }
         .card-content > .content-list .content-items .discription li a {
           color: white; }
     .card-content > .content-list .content-items p {
@@ -560,7 +563,7 @@ a {
       padding: 5px;
       color: white; }
     .card-content > .content-list .content-items:nth-child(2n + 1) {
-      background-color: rgba(116, 10, 10, 0.6); }
+      background-color: rgba(56, 129, 212, 0.8); }
 
 #genres {
   position: absolute;
@@ -653,7 +656,7 @@ a {
   display: block; }
 
 .footer {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 15px 0; }
   .footer .socials {
     margin-bottom: 20px; }
