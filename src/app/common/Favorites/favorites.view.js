@@ -3,6 +3,7 @@ import { Services } from "../extends/Services";
 export class FavoritesView extends Services {
   constructor(template) {
     super(template);
+    this.flag = false;
     this.cardList = document.querySelector(".container");
     this.favoriteBtn = document.querySelector(".favorites");
     document.addEventListener("click", this.openFavorites.bind(this));
@@ -43,8 +44,12 @@ export class FavoritesView extends Services {
     const modalBlock = document.querySelector(".favModal");
     modalBlock.classList.add("show-modal");
     modalBlock.innerHTML = string;
-    setTimeout(() => {
+    const removeModal = () => {
       modalBlock.classList.remove("show-modal");
-    }, 2000);
+      this.flag = false;
+    }
+    if (!this.flag) this.flag = true;
+      else return;  
+    setTimeout(removeModal, 2000);
   }
 }
