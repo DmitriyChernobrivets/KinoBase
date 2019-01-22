@@ -546,6 +546,7 @@ body {
         padding: 5px; }
         .aside-menu .films .films-category-list > li > a {
           font-size: 16px;
+          font-weight: bold;
           color: #6b6377; }
           .aside-menu .films .films-category-list > li > a:hover {
             color: rgba(221, 8, 8, 0.6); }
