@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
+  animation: filmcards 400ms linear;
   &_overlay {
     position: absolute;
     top: 0;
@@ -42,9 +42,7 @@
     padding: 3px 12px;
     z-index: 25;
     text-align: center;
-    // background-color: rgba(252, 13, 13, 0.6);
     background-color: rgb(101, 192, 228);
-    // border-radius: 0 0 10px 0;
   }
   &_name {
     position: absolute;
@@ -62,8 +60,6 @@
     position: relative;
 
     width: 19%;
-    // min-height: 150px;
-    // border-radius: 10px;
     height: 270px;
 
     overflow: hidden;
@@ -120,4 +116,13 @@
   width: 100%;
   text-align: center;
   color: rgb(240, 18, 18);
+}
+
+@keyframes filmcards {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

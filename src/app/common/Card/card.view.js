@@ -1,6 +1,9 @@
 import { Services } from "../extends/Services";
 import trailerFrame from "../../../templates/trailerFrame.hbs";
-import { actorSliderCreate, movieImagesSliderCreate } from "../../helpers/helpers.functions"
+import {
+  actorSliderCreate,
+  movieImagesSliderCreate
+} from "../../helpers/helpers.functions";
 
 import { lory } from "../../helpers/slider/lory.min.js";
 export class CardView extends Services {
@@ -48,10 +51,3 @@ export class CardView extends Services {
     $(".slider-slick").slick(this.sliderConfig);
   }
 }
-
-
-// function movieImagesSliderCreate(arr) {
-//   const movieImagesContainer = document.querySelector(".movie-images-list");
-//   const template = movieImagesSlider(arr);
-//   movieImagesContainer.innerHTML = template;
-// }

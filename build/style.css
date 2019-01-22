@@ -302,7 +302,9 @@ body {
 .card-list {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  -webkit-animation: filmcards 400ms linear;
+          animation: filmcards 400ms linear; }
   .card-list_overlay {
     position: absolute;
     top: 0;
@@ -389,6 +391,18 @@ body {
   text-align: center;
   color: #f01212; }
 
+@-webkit-keyframes filmcards {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes filmcards {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .aside-menu {
   box-shadow: 10px 5px 19px -8px rgba(0, 0, 0, 0.75);
   transition: 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -435,8 +449,10 @@ body {
       .aside-menu .films-head:hover {
         color: rgba(221, 8, 8, 0.6); }
     .aside-menu .films .films-category-list {
-      display: none;
       width: 230px;
+      height: 0;
+      transition: height 300ms linear;
+      overflow: hidden;
       margin: 0 0 20px 10px; }
       .aside-menu .films .films-category-list > li {
         margin-left: 50px;
@@ -448,7 +464,8 @@ body {
             color: rgba(221, 8, 8, 0.6); }
 
 .category-open {
-  display: block !important; }
+  height: 100px !important;
+  transition: height 300ms linear; }
 
 .menu-overlay {
   position: fixed;

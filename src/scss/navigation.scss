@@ -56,13 +56,15 @@
       }
     }
     .films-category-list {
-      display: none;
       width: 230px;
-
+      height: 0;
+      transition: height 300ms linear;
+      overflow: hidden;
       margin: 0 0 20px 10px;
       & > li {
         margin-left: 50px;
         padding: 5px;
+
         & > a {
           font-size: 16px;
 
@@ -76,7 +78,9 @@
   }
 }
 .category-open {
-  display: block !important;
+  height: 100px !important;
+
+  transition: height 300ms linear;
 }
 .menu-overlay {
   position: fixed;

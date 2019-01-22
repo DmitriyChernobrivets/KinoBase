@@ -11,6 +11,7 @@ export class FavoritesView extends Services {
       this.favoritesOnStarClickId.bind(this)
     );
     this.cardList.addEventListener("click", this.deleteFavCard.bind(this));
+    this.ismodalOpen = false;
   }
 
   openFavorites({ target }) {
@@ -40,11 +41,14 @@ export class FavoritesView extends Services {
     } else this.eventEmite("cardFavoritesAdd", id, currentCategory);
   }
   showFavModal(string) {
+    if (this.ismodalOpen) return;
+    this.ismodalOpen = true;
     const modalBlock = document.querySelector(".favModal");
     modalBlock.classList.add("show-modal");
     modalBlock.innerHTML = string;
     setTimeout(() => {
       modalBlock.classList.remove("show-modal");
+      this.ismodalOpen = false;
     }, 2000);
   }
 }

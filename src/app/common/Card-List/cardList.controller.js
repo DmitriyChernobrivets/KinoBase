@@ -14,12 +14,9 @@ export class CardListController {
   filmsCardList(query, page) {
     this.model
       .filmsPromise(query, page)
-      // .then(res => console.log(res.data))
       .then(({ data }) => {
         this.model.tempArray = data.results;
-
         this.view.hidePagination(true);
-
         this.view.render(data.results);
         this.model.updateStars();
       })
@@ -28,9 +25,9 @@ export class CardListController {
   tvCardList(query, page) {
     this.model
       .SeriasPromise(query, page)
-      // .then(res => console.log(res.data))
       .then(({ data }) => {
         this.model.tempArray = data.results;
+        this.view.hidePagination(true);
         this.view.render(data.results);
         this.model.updateStars();
       })
