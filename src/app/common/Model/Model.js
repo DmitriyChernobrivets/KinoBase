@@ -18,12 +18,13 @@ export class Model extends Promises {
         NetworkError: "Network Error, Try again later"
       }
     ];
+    this.favCounter = 0;
   }
   createLocalStorageFav(id, category) {
     const obj = this.getFilmsObjById(id);
     const alreadyExistedInStorage = this.findExistingIdInStorage(id, obj);
     if (alreadyExistedInStorage) return;
-    
+    this.favCounter = this.favCounter + 1;
     obj.categorys = category;
     this.localStorageArray.push(obj);
     this.setArrayInLocalStorage();
@@ -32,6 +33,7 @@ export class Model extends Promises {
   deleteFromStorage(id) {
     const alreadyExistedInStorage = this.findExistingIdInStorage(id, null);
     if (!alreadyExistedInStorage) return;
+    this.favCounter = this.favCounter - 1;
     this.removeFromArray(id);
     this.setArrayInLocalStorage();
   }
@@ -67,8 +69,8 @@ export class Model extends Promises {
   }
   updateStars() {
     const cards = [...document.querySelectorAll(".card-list_item")];
-
     const resArr = this.getCardsFromStorage(cards);
     this.drawStarsOnLoad(resArr);
+    this.favCounter = this.localStorageArray.length;
   }
 }

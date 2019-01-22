@@ -580,11 +580,16 @@ body {
   color: white;
   padding: 15px; }
 
-.top-nav-menu_list {
-  display: flex;
-  justify-content: center;
+.top-nav-menu {
   box-shadow: -2px 20px 15px -17px #161236;
   background-color: rgba(2, 29, 59, 0.8); }
+
+.top-nav-menu_list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 450px; }
   .top-nav-menu_list > li {
     padding: 15px 0 15px 0; }
     .top-nav-menu_list > li a:hover {
@@ -758,6 +763,14 @@ body {
 
 .show-modal {
   display: block; }
+
+.fav-notification {
+  top: 0;
+  font-size: 22px;
+  color: red;
+  font-weight: bold;
+  position: absolute;
+  right: 30px; }
 
 .footer {
   background-color: rgba(0, 0, 0, 0.9);

@@ -75,3 +75,12 @@
 .show-modal {
   display: block;
 }
+.fav-notification {
+  top: 0;
+
+  font-size: 22px;
+  color: red;
+  font-weight: bold;
+  position: absolute;
+  right: 30px;
+}

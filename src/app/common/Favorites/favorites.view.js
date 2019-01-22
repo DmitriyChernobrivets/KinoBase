@@ -5,11 +5,13 @@ export class FavoritesView extends Services {
     super(template);
     this.cardList = document.querySelector(".container");
     this.favoriteBtn = document.querySelector(".favorites");
+
     document.addEventListener("click", this.openFavorites.bind(this));
     this.cardList.addEventListener(
       "click",
       this.favoritesOnStarClickId.bind(this)
     );
+
     this.cardList.addEventListener("click", this.deleteFavCard.bind(this));
     this.ismodalOpen = false;
   }
@@ -19,6 +21,7 @@ export class FavoritesView extends Services {
 
     this.eventEmite("openFavoritesList");
   }
+
   deleteFavCard({ target }) {
     if (!target.classList.contains("js-close-btn")) return;
 

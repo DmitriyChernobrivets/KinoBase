@@ -1,3 +1,5 @@
+import { updateFavNode } from "../../helpers/helpers.functions";
+
 export class CardListController {
   constructor(view, model) {
     this.view = view;
@@ -16,6 +18,7 @@ export class CardListController {
         this.view.hidePagination(true);
         this.view.render(data.results);
         this.model.updateStars();
+        updateFavNode(this.model.favCounter);
       })
       .catch(error => console.log(error));
   }
@@ -27,6 +30,7 @@ export class CardListController {
         this.view.hidePagination(true);
         this.view.render(data.results);
         this.model.updateStars();
+        updateFavNode(this.model.favCounter);
       })
       .catch(err => console.log(err));
   }
@@ -43,6 +47,7 @@ export class CardListController {
           this.view.hidePagination();
           this.view.render(data.results);
           this.model.updateStars();
+          updateFavNode(this.model.favCounter);
         }
       })
       .catch(err => console.log(err));

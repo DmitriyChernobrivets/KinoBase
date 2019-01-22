@@ -1,4 +1,5 @@
-import { ifFavoritesEmpty } from "../../helpers/helpers.functions"
+import { ifFavoritesEmpty } from "../../helpers/helpers.functions";
+import { updateFavNode } from "../../helpers/helpers.functions";
 
 export class FavoritesController {
   constructor(view, model) {
@@ -12,6 +13,7 @@ export class FavoritesController {
     ifFavoritesEmpty.call(this);
     this.model.deleteFromStorage(id);
     this.view.showFavModal("DELETED");
+    updateFavNode(this.model.favCounter);
   }
   drawFavList() {
     const arr = this.model.localStorageArray;
@@ -23,7 +25,6 @@ export class FavoritesController {
   putLocalStorage(id, category) {
     this.model.createLocalStorageFav(id, category);
     this.view.showFavModal("ADDED");
+    updateFavNode(this.model.favCounter);
   }
 }
-
-

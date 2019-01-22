@@ -107,12 +107,17 @@
   color: white;
   padding: 15px;
 }
+.top-nav-menu {
+  box-shadow: -2px 20px 15px -17px rgb(22, 18, 54);
+  background-color: rgba(2, 29, 59, 0.8);
+}
 .top-nav-menu_list {
+  position: relative;
   display: flex;
   justify-content: center;
-  box-shadow: -2px 20px 15px -17px rgb(22, 18, 54);
-  // border-bottom: 2px outset #132b43;
-  background-color: rgba(2, 29, 59, 0.8);
+  margin: 0 auto;
+  max-width: 450px;
+
   & > li {
     padding: 15px 0 15px 0;
     & a:hover {
