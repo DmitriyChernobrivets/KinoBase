@@ -21,3 +21,62 @@
   padding: 15px;
   background-color: rgba(2, 29, 59, 0.9);
 }
+.WelcomeText {
+  font-size: 70px;
+  color: white;
+  width: 0;
+  font-family: "Permanent Marker", cursive;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  animation: welcomeAnimation 3000ms linear;
+  @media screen and (max-width: 1200px) {
+    font-size: 40px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+.WelcomeContainer {
+  position: absolute;
+  z-index: 111;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 20, 20, 0.7);
+  animation: disappearing 3000ms linear;
+}
+.WelcomeText p {
+  font-size: 80px;
+  white-space: nowrap;
+  @media screen and (max-width: 1200px) {
+    font-size: 50px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+  }
+}
+@keyframes disappearing {
+  0% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes welcomeAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}

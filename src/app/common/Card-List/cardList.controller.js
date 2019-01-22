@@ -2,10 +2,7 @@ export class CardListController {
   constructor(view, model) {
     this.view = view;
     this.model = model;
-    document.addEventListener(
-      "DOMContentLoaded",
-      this.filmsCardList.bind(this, "now_playing")
-    );
+    this.filmsCardList("now_playing", 1);
     this.view.eventOn("films", this.filmsCardList.bind(this));
     this.view.eventOn("TV", this.tvCardList.bind(this));
     this.view.eventOn("globalSearch", this.globalSearchList.bind(this));

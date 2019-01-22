@@ -13,14 +13,16 @@ import { FavoritesView } from "../app/common/Favorites/favorites.view";
 import { FavoritesController } from "../app/common/Favorites/favorites.controller";
 import favorites from "../templates/favorites-list.hbs";
 
-const bodyMarkup = bodyTemplate();
-document.body.innerHTML = bodyMarkup;
+setTimeout(() => {
+  const bodyMarkup = bodyTemplate();
+  document.body.innerHTML = bodyMarkup;
 
-const model = new Model();
-const cardListView = new CardListView(cardListTemplate);
-const cardView = new CardView(cardFilms);
-const favoritesView = new FavoritesView(favorites);
-new CardListController(cardListView, model);
-new CardController(cardView, model);
-new Navigation();
-new FavoritesController(favoritesView, model);
+  const model = new Model();
+  const cardListView = new CardListView(cardListTemplate);
+  const cardView = new CardView(cardFilms);
+  const favoritesView = new FavoritesView(favorites);
+  new CardListController(cardListView, model);
+  new CardController(cardView, model);
+  new Navigation();
+  new FavoritesController(favoritesView, model);
+}, 3000);

@@ -31,3 +31,14 @@ html,
 input {
   border: none;
 }
+.base-container {
+  animation: baseAnimate 500ms linear;
+}
+@keyframes baseAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
